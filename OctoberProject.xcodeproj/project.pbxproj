@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF69792AD011F1003FFECB /* TabBarController.swift */; };
+		DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF697B2AD012C7003FFECB /* MapViewController.swift */; };
+		DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */; };
+		DCCBF1022AD34D0D0051D97B /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBF1012AD34D0D0051D97B /* Resources.swift */; };
+		DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBF1032AD34D2C0051D97B /* Tab.swift */; };
 		F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D42ACF04F20096A6DA /* AppDelegate.swift */; };
 		F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D62ACF04F20096A6DA /* SceneDelegate.swift */; };
-		F4ABA4D92ACF04F20096A6DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D82ACF04F20096A6DA /* ViewController.swift */; };
+		F4ABA4D92ACF04F20096A6DA /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D82ACF04F20096A6DA /* MessageViewController.swift */; };
 		F4ABA4DE2ACF04F30096A6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4ABA4DD2ACF04F30096A6DA /* Assets.xcassets */; };
 		F4ABA4E12ACF04F30096A6DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4ABA4DF2ACF04F30096A6DA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DCAF69792AD011F1003FFECB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DCAF697B2AD012C7003FFECB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DCCBF1012AD34D0D0051D97B /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		DCCBF1032AD34D2C0051D97B /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		F4ABA4D12ACF04F20096A6DA /* OctoberProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoberProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4ABA4D42ACF04F20096A6DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4ABA4D62ACF04F20096A6DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F4ABA4D82ACF04F20096A6DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4ABA4D82ACF04F20096A6DA /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		F4ABA4DD2ACF04F30096A6DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4ABA4E02ACF04F30096A6DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4ABA4E22ACF04F30096A6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +45,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DCAF69782AD011AA003FFECB /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				DCAF69792AD011F1003FFECB /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		DCCBF1002AD34CE00051D97B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DCCBF1012AD34D0D0051D97B /* Resources.swift */,
+				DCCBF1032AD34D2C0051D97B /* Tab.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F4ABA4C82ACF04F20096A6DA = {
 			isa = PBXGroup;
 			children = (
@@ -54,9 +81,13 @@
 		F4ABA4D32ACF04F20096A6DA /* OctoberProject */ = {
 			isa = PBXGroup;
 			children = (
+				DCCBF1002AD34CE00051D97B /* Helpers */,
+				DCAF69782AD011AA003FFECB /* TabBarController */,
 				F4ABA4EA2ACF198A0096A6DA /* Application */,
 				F4ABA4EB2ACF19940096A6DA /* Resources */,
-				F4ABA4D82ACF04F20096A6DA /* ViewController.swift */,
+				DCAF697B2AD012C7003FFECB /* MapViewController.swift */,
+				DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */,
+				F4ABA4D82ACF04F20096A6DA /* MessageViewController.swift */,
 			);
 			path = OctoberProject;
 			sourceTree = "<group>";
@@ -150,8 +181,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4ABA4D92ACF04F20096A6DA /* ViewController.swift in Sources */,
+				DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */,
+				F4ABA4D92ACF04F20096A6DA /* MessageViewController.swift in Sources */,
+				DCCBF1022AD34D0D0051D97B /* Resources.swift in Sources */,
+				DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */,
+				DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */,
 				F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */,
+				DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */,
 				F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
