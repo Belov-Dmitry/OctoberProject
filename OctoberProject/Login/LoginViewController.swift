@@ -6,10 +6,21 @@
 //
 
 import UIKit
+import SnapKit
 
-class LoginViewController: UIViewController {
-
+final class LoginViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initLoginView()
+        
+        view.backgroundColor = .white
+    }
+    
+    private func initLoginView() {
+        let loginView = LoginView()
+        view.addSubview(loginView)
+        loginView.setupUI()
     }
 }

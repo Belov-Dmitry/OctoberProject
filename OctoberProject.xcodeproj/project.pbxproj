@@ -10,6 +10,9 @@
 		803766D02AD29AA0003ED0CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803766CF2AD29AA0003ED0CA /* LoginViewController.swift */; };
 		803766D32AD29AF6003ED0CA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 803766D22AD29AF6003ED0CA /* SnapKit */; };
 		803766D52AD29AF6003ED0CA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 803766D42AD29AF6003ED0CA /* SnapKit-Dynamic */; };
+		803766D72AD29E73003ED0CA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803766D62AD29E73003ED0CA /* Colors.swift */; };
+		803766D92AD29F6F003ED0CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803766D82AD29F6F003ED0CA /* LoginView.swift */; };
+		803766DB2AD2A4FA003ED0CA /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803766DA2AD2A4FA003ED0CA /* Fonts.swift */; };
 		F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D42ACF04F20096A6DA /* AppDelegate.swift */; };
 		F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D62ACF04F20096A6DA /* SceneDelegate.swift */; };
 		F4ABA4D92ACF04F20096A6DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D82ACF04F20096A6DA /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		803766CF2AD29AA0003ED0CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		803766D62AD29E73003ED0CA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		803766D82AD29F6F003ED0CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		803766DA2AD2A4FA003ED0CA /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F4ABA4D12ACF04F20096A6DA /* OctoberProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoberProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4ABA4D42ACF04F20096A6DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4ABA4D62ACF04F20096A6DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				803766CF2AD29AA0003ED0CA /* LoginViewController.swift */,
+				803766D82AD29F6F003ED0CA /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -91,6 +98,8 @@
 				F4ABA4DD2ACF04F30096A6DA /* Assets.xcassets */,
 				F4ABA4DF2ACF04F30096A6DA /* LaunchScreen.storyboard */,
 				F4ABA4E22ACF04F30096A6DA /* Info.plist */,
+				803766D62AD29E73003ED0CA /* Colors.swift */,
+				803766DA2AD2A4FA003ED0CA /* Fonts.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -172,7 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				803766DB2AD2A4FA003ED0CA /* Fonts.swift in Sources */,
+				803766D92AD29F6F003ED0CA /* LoginView.swift in Sources */,
 				803766D02AD29AA0003ED0CA /* LoginViewController.swift in Sources */,
+				803766D72AD29E73003ED0CA /* Colors.swift in Sources */,
 				F4ABA4D92ACF04F20096A6DA /* ViewController.swift in Sources */,
 				F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */,
 				F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */,
