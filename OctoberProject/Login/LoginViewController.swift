@@ -10,6 +10,8 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
     
+    private let loginView: LoginView = LoginView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,8 +21,11 @@ final class LoginViewController: UIViewController {
     }
     
     private func initLoginView() {
-        let loginView = LoginView()
+       
         view.addSubview(loginView)
+        loginView.snp.makeConstraints { make in
+            make.leading.top.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
         loginView.setupUI()
     }
 }

@@ -14,6 +14,7 @@ final class LoginView: UIView {
         button.setTitle("Восстановить пароль", for: .normal)
         button.titleLabel?.font = Fonts.buttonFont
         button.setTitleColor(Colors.buttonColor2, for: .normal)
+        button.addTarget(self, action: #selector(restorePasswordButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -28,6 +29,7 @@ final class LoginView: UIView {
         button.setTitle("Регистрация", for: .normal)
         button.titleLabel?.font = Fonts.buttonFont
         button.setTitleColor(Colors.buttonColor2, for: .normal)
+        button.addTarget(self, action: #selector(registrationButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -143,7 +145,15 @@ final class LoginView: UIView {
     }
     
     @objc private func loginButtonPressed() {
-        print("login pressed")
+        print("login button pressed")
+    }
+    
+    @objc private func restorePasswordButtonPressed() {
+        print("restore button pressed")
+    }
+    
+    @objc private func registrationButtonPressed() {
+        print("registration button pressed")
     }
     
     @objc private func loginOrPasswordTextChanged(){
