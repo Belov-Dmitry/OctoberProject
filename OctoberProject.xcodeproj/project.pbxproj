@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183FAA8FBEC3C59E2CCD1171 /* Pods_OctoberProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB1BAC0FAAF61683F287316 /* Pods_OctoberProject.framework */; };
+		DC5EF6A02AD71CB2001BB20C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5EF69F2AD71CB2001BB20C /* MenuCell.swift */; };
+		DC5EF6A32AD723D1001BB20C /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5EF6A22AD723D1001BB20C /* CollectionCell.swift */; };
+		DCCBF10E2AD6B24D0051D97B /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBF10D2AD6B24D0051D97B /* MenuBar.swift */; };
 		F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D42ACF04F20096A6DA /* AppDelegate.swift */; };
 		F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D62ACF04F20096A6DA /* SceneDelegate.swift */; };
 		F4ABA4D92ACF04F20096A6DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D82ACF04F20096A6DA /* ViewController.swift */; };
@@ -15,6 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5EB8C4B827F70585774CB8E0 /* Pods-OctoberProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoberProject.release.xcconfig"; path = "Target Support Files/Pods-OctoberProject/Pods-OctoberProject.release.xcconfig"; sourceTree = "<group>"; };
+		ABB1BAC0FAAF61683F287316 /* Pods_OctoberProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OctoberProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5F0768282C7878E8FCC587A /* Pods-OctoberProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OctoberProject.debug.xcconfig"; path = "Target Support Files/Pods-OctoberProject/Pods-OctoberProject.debug.xcconfig"; sourceTree = "<group>"; };
+		DC5EF69F2AD71CB2001BB20C /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		DC5EF6A22AD723D1001BB20C /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		DCCBF10D2AD6B24D0051D97B /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		F4ABA4D12ACF04F20096A6DA /* OctoberProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoberProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4ABA4D42ACF04F20096A6DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4ABA4D62ACF04F20096A6DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,17 +39,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183FAA8FBEC3C59E2CCD1171 /* Pods_OctoberProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48AB997AD17FC8234F23B495 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5F0768282C7878E8FCC587A /* Pods-OctoberProject.debug.xcconfig */,
+				5EB8C4B827F70585774CB8E0 /* Pods-OctoberProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		66A5E210B04E492D0FED6972 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1BAC0FAAF61683F287316 /* Pods_OctoberProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC5EF6A12AD723AA001BB20C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC5EF6A22AD723D1001BB20C /* CollectionCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DCCBF1052AD3FE4B0051D97B /* MessageController */ = {
+			isa = PBXGroup;
+			children = (
+				DCCBF10D2AD6B24D0051D97B /* MenuBar.swift */,
+				DC5EF69F2AD71CB2001BB20C /* MenuCell.swift */,
+			);
+			path = MessageController;
+			sourceTree = "<group>";
+		};
+		DCCBF1082AD55EB10051D97B /* Extesions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extesions;
+			sourceTree = "<group>";
+		};
 		F4ABA4C82ACF04F20096A6DA = {
 			isa = PBXGroup;
 			children = (
 				F4ABA4D32ACF04F20096A6DA /* OctoberProject */,
 				F4ABA4D22ACF04F20096A6DA /* Products */,
+				48AB997AD17FC8234F23B495 /* Pods */,
+				66A5E210B04E492D0FED6972 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +108,9 @@
 		F4ABA4D32ACF04F20096A6DA /* OctoberProject */ = {
 			isa = PBXGroup;
 			children = (
+				DC5EF6A12AD723AA001BB20C /* Model */,
+				DCCBF1082AD55EB10051D97B /* Extesions */,
+				DCCBF1052AD3FE4B0051D97B /* MessageController */,
 				F4ABA4EA2ACF198A0096A6DA /* Application */,
 				F4ABA4EB2ACF19940096A6DA /* Resources */,
 				F4ABA4D82ACF04F20096A6DA /* ViewController.swift */,
@@ -87,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4ABA4E52ACF04F30096A6DA /* Build configuration list for PBXNativeTarget "OctoberProject" */;
 			buildPhases = (
+				8C1B68F60AAB666D44DCF538 /* [CP] Check Pods Manifest.lock */,
 				F4ABA4CD2ACF04F20096A6DA /* Sources */,
 				F4ABA4CE2ACF04F20096A6DA /* Frameworks */,
 				F4ABA4CF2ACF04F20096A6DA /* Resources */,
+				FD3B1284AF4FCED41DEDDE23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,13 +204,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8C1B68F60AAB666D44DCF538 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OctoberProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD3B1284AF4FCED41DEDDE23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OctoberProject/Pods-OctoberProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OctoberProject/Pods-OctoberProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OctoberProject/Pods-OctoberProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F4ABA4CD2ACF04F20096A6DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5EF6A02AD71CB2001BB20C /* MenuCell.swift in Sources */,
 				F4ABA4D92ACF04F20096A6DA /* ViewController.swift in Sources */,
 				F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */,
+				DC5EF6A32AD723D1001BB20C /* CollectionCell.swift in Sources */,
+				DCCBF10E2AD6B24D0051D97B /* MenuBar.swift in Sources */,
 				F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,7 +311,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -270,7 +374,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -291,6 +395,7 @@
 		};
 		F4ABA4E62ACF04F30096A6DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5F0768282C7878E8FCC587A /* Pods-OctoberProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +427,7 @@
 		};
 		F4ABA4E72ACF04F30096A6DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EB8C4B827F70585774CB8E0 /* Pods-OctoberProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
