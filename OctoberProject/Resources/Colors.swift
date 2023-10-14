@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 final class Colors {
+    public static let loginBackgroundColor = UIColorUtils.CreateFromRGB(red: 55, green: 109, blue: 254)
+    
     public static let buttonColor = UIColorUtils.CreateFromRGB(red: 29, green: 133, blue: 255)
     
     public static let buttonColor2 = UIColorUtils.CreateFromRGB(red: 111, green: 119, blue: 132)

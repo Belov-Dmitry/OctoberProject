@@ -16,8 +16,6 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         initLoginView()
-        
-        view.backgroundColor = .white
     }
     
     private func initLoginView() {
