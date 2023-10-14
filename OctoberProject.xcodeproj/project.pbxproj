@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8090F2112ADACCFC000776E8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F20F2ADACCFC000776E8 /* LoginView.swift */; };
-		8090F2122ADACCFC000776E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2102ADACCFC000776E8 /* LoginViewController.swift */; };
-		8090F2152ADACD28000776E8 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2132ADACD28000776E8 /* Fonts.swift */; };
-		8090F2162ADACD28000776E8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2142ADACD28000776E8 /* Colors.swift */; };
+		8090F2192ADACDC1000776E8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8090F2182ADACDC1000776E8 /* SnapKit */; };
+		8090F21B2ADACDC1000776E8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8090F21A2ADACDC1000776E8 /* SnapKit-Dynamic */; };
 		DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF69792AD011F1003FFECB /* TabBarController.swift */; };
 		DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF697B2AD012C7003FFECB /* MapViewController.swift */; };
 		DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */; };
@@ -24,10 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8090F20F2ADACCFC000776E8 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		8090F2102ADACCFC000776E8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8090F2132ADACD28000776E8 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		8090F2142ADACD28000776E8 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DCAF69792AD011F1003FFECB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DCAF697B2AD012C7003FFECB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -47,21 +41,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8090F2192ADACDC1000776E8 /* SnapKit in Frameworks */,
+				8090F21B2ADACDC1000776E8 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8090F20E2ADACCFC000776E8 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				8090F20F2ADACCFC000776E8 /* LoginView.swift */,
-				8090F2102ADACCFC000776E8 /* LoginViewController.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		DCAF69782AD011AA003FFECB /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +85,6 @@
 		F4ABA4D32ACF04F20096A6DA /* OctoberProject */ = {
 			isa = PBXGroup;
 			children = (
-				8090F20E2ADACCFC000776E8 /* Login */,
 				DCCBF1002AD34CE00051D97B /* Helpers */,
 				DCAF69782AD011AA003FFECB /* TabBarController */,
 				F4ABA4EA2ACF198A0096A6DA /* Application */,
@@ -122,8 +108,6 @@
 		F4ABA4EB2ACF19940096A6DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8090F2142ADACD28000776E8 /* Colors.swift */,
-				8090F2132ADACD28000776E8 /* Fonts.swift */,
 				F4ABA4DD2ACF04F30096A6DA /* Assets.xcassets */,
 				F4ABA4DF2ACF04F30096A6DA /* LaunchScreen.storyboard */,
 				F4ABA4E22ACF04F30096A6DA /* Info.plist */,
@@ -147,6 +131,10 @@
 			dependencies = (
 			);
 			name = OctoberProject;
+			packageProductDependencies = (
+				8090F2182ADACDC1000776E8 /* SnapKit */,
+				8090F21A2ADACDC1000776E8 /* SnapKit-Dynamic */,
+			);
 			productName = OctoberProject;
 			productReference = F4ABA4D12ACF04F20096A6DA /* OctoberProject.app */;
 			productType = "com.apple.product-type.application";
@@ -175,6 +163,9 @@
 				Base,
 			);
 			mainGroup = F4ABA4C82ACF04F20096A6DA;
+			packageReferences = (
+				8090F2172ADACDC1000776E8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F4ABA4D22ACF04F20096A6DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -202,16 +193,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */,
-				8090F2162ADACD28000776E8 /* Colors.swift in Sources */,
 				F4ABA4D92ACF04F20096A6DA /* MessageViewController.swift in Sources */,
 				DCCBF1022AD34D0D0051D97B /* Resources.swift in Sources */,
-				8090F2112ADACCFC000776E8 /* LoginView.swift in Sources */,
 				DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */,
 				DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */,
 				F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */,
 				DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */,
-				8090F2152ADACD28000776E8 /* Fonts.swift in Sources */,
-				8090F2122ADACCFC000776E8 /* LoginViewController.swift in Sources */,
 				F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2NHQFJT4NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OctoberProject/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -387,7 +374,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2NHQFJT4NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OctoberProject/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -433,6 +420,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8090F2172ADACDC1000776E8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8090F2182ADACDC1000776E8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8090F2172ADACDC1000776E8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		8090F21A2ADACDC1000776E8 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8090F2172ADACDC1000776E8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F4ABA4C92ACF04F20096A6DA /* Project object */;
 }
