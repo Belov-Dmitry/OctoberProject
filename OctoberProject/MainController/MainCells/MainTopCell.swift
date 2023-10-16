@@ -1,0 +1,232 @@
+//
+//  MainTopCell.swift
+//  OctoberProject
+//
+//  Created by Dmitry Belov on 11.10.2023.
+//
+
+import UIKit
+import SnapKit
+
+protocol MainTopCellDelegate: AnyObject {
+    func didTapPersonInfoViewButton()
+}
+class MainTopCell: UICollectionViewCell {
+    
+    // MARK: - Public
+    
+    weak var delegate: MainTopCellDelegate?
+    
+    func configure() {
+        personPhoto.image = UIImage(named: "person")
+        petPhoto.image = UIImage(named: "pet")
+        let personName = "Name"
+        let petName = "PetName"
+        personAndPetNameLabel.text = "\(personName) и \(petName)"
+        onlineIndicatorImage.image = UIImage(named: "onlineIndicator")
+        timeForAWalkLabel.text = "На прогулке ещё 15 минут"
+        var dialogButtonImageName = "ChatWithoutNotifications"
+        dialogButton.setImage(UIImage(named: dialogButtonImageName), for: .normal)
+        personInfoViewTitleLabel.text = "О себе"
+        let messageCountNotificationLabelText = "10"
+        messageCountNotificationLabel.text = messageCountNotificationLabelText
+        personInfoViewButton.addTarget(self, action: #selector(didTapPersonInfoViewButton), for: .touchUpInside)
+        
+        
+    }
+  
+    
+    // MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    // MARK: - Private constants
+    private enum UIConstants {
+        static let personPhoto: CGFloat = 118
+        static let petPhoto: CGFloat = 80
+        static let personAndPetNameLabelFontSize: CGFloat = 20
+        static let timeForAWalkLabelFontSize: CGFloat = 14
+        static let dialogImageSize: CGFloat = 47
+        static let personInfoViewHeight = 100
+        static let personInfoViewTitleLabelFontSize: CGFloat = 13
+        static let messageCountNotificationLabelFont: CGFloat = 7
+        
+        
+    }
+    // MARK: - Private properties
+    private let topImage = UIImageView()
+    
+    private let personPhoto: UIImageView = {
+        let view = UIImageView()
+        view.layer.cornerRadius = UIConstants.personPhoto / 2
+        view.clipsToBounds = true
+        return view
+    }()
+    let petPhoto: UIImageView = {
+        let view = UIImageView()
+        view.layer.cornerRadius = UIConstants.petPhoto / 2
+        view.clipsToBounds = true
+        return view
+    }()
+    private let personAndPetNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: UIConstants.personAndPetNameLabelFontSize, weight: .bold)
+        return label
+    }()
+    private let onlineIndicatorImage: UIImageView = {
+        let view = UIImageView()
+        return view
+    }()
+    private let timeForAWalkLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: UIConstants.timeForAWalkLabelFontSize, weight: .bold)
+        label.textColor = .gray
+        return label
+    }()
+    private let dialogImage: UIImageView = {
+        let view = UIImageView()
+        view.layer.cornerRadius = UIConstants.dialogImageSize / 2
+        view.clipsToBounds = true
+        view.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 252/255, alpha: 1)
+        return view
+    }()
+    private let dialogButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .systemBlue
+        return button
+    }()
+    private let settingsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "Settings"), for: .normal)
+        button.setTitle(" Настройки", for: .normal)
+        button.tintColor = .black
+        button.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 252/255, alpha: 1)
+        button.layer.cornerRadius = 23
+        button.clipsToBounds = true
+        button.layer.borderWidth = 3
+        button.layer.borderColor = CGColor(red: 237/255, green: 237/255, blue: 240/255, alpha: 1)
+        return button
+    }()
+    private let personInfoView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 15
+        view.clipsToBounds = true
+        view.backgroundColor = .white
+        return view
+    }()
+    private let personInfoViewTitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: UIConstants.personInfoViewTitleLabelFontSize)
+        return label
+    }()
+    private let personInfoViewButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Нажмите чтобы редактировать", for: .normal)
+        button.titleLabel?.font = UIFont(name: "SF UI Text", size: 16)
+        button.tintColor = UIColor(red: 49/255, green: 101/255, blue: 200/255, alpha: 1)
+        return button
+    }()
+    private let messageCountNotificationLabel: UILabel = {
+        let label = UILabel()
+        label.layer.cornerRadius = 6
+        label.layer.masksToBounds = true
+        label.font = .systemFont(ofSize: UIConstants.messageCountNotificationLabelFont, weight: .bold)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.backgroundColor = UIColor(red: 250/255, green: 46/255, blue: 105/255, alpha: 1)
+        return label
+    }()
+    
+    @objc private func didTapPersonInfoViewButton() {
+        delegate?.didTapPersonInfoViewButton()
+    }
+    
+}
+// MARK: - Private methods
+private extension MainTopCell {
+    func initialize (){       
+        contentView.addSubview(topImage)
+        topImage.image = UIImage(named: "top")
+        topImage.snp.makeConstraints { make in
+            make.leading.trailing.top.equalToSuperview()
+        }
+        contentView.addSubview(personPhoto)
+        personPhoto.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(62)
+            make.leading.equalTo(20)
+            make.width.equalTo(118)
+            make.height.equalTo(118)
+        }
+        contentView.addSubview(petPhoto)
+        petPhoto.layer.borderWidth = 3
+        petPhoto.layer.borderColor = UIColor.white.cgColor
+        petPhoto.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(100)
+            make.leading.equalTo(118)
+            make.width.equalTo(80)
+            make.height.equalTo(80)
+        }
+        contentView.addSubview(personAndPetNameLabel)
+        personAndPetNameLabel.snp.makeConstraints { make in
+            make.leading.equalTo(personPhoto)
+            //make.trailing.equalToSuperview()
+            make.top.equalTo(personPhoto.snp.bottom).offset(20)
+        }
+        contentView.addSubview(onlineIndicatorImage)
+        onlineIndicatorImage.snp.makeConstraints { make in
+            make.leading.equalTo(personAndPetNameLabel.snp.trailing)
+            make.top.equalTo(personAndPetNameLabel)
+            make.size.equalTo(10)
+        }
+        contentView.addSubview(timeForAWalkLabel)
+        timeForAWalkLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.top.equalToSuperview().inset(229)
+        }
+        contentView.addSubview(dialogImage)
+        dialogImage.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(20)
+            make.top.equalToSuperview().inset(62)
+            make.size.equalTo(47)
+        }
+        contentView.addSubview(dialogButton)
+        dialogButton.snp.makeConstraints { make in
+            make.center.equalTo(dialogImage)
+            make.size.equalTo(22)
+        }
+        contentView.addSubview(settingsButton)
+        settingsButton.snp.makeConstraints { make in
+            make.leading.equalTo(petPhoto).inset(100)
+            make.trailing.equalToSuperview().inset(20)
+            make.top.equalToSuperview().inset(134)
+            make.height.equalTo(46)
+        }
+        contentView.addSubview(personInfoView)
+        personInfoView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(267)
+            make.width.equalToSuperview()
+            make.height.equalTo(UIConstants.personInfoViewHeight)
+        }
+        contentView.addSubview(personInfoViewTitleLabel)
+        personInfoViewTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(personInfoView).inset(20)
+            make.leading.equalTo(personInfoView).inset(20)
+        }
+        contentView.addSubview(personInfoViewButton)
+        personInfoViewButton.snp.makeConstraints { make in
+            make.top.equalTo(personInfoViewTitleLabel).inset(10)
+            make.leading.equalTo(personInfoView).inset(20)
+        }
+        contentView.addSubview(messageCountNotificationLabel)
+        messageCountNotificationLabel.snp.makeConstraints { make in
+            make.trailing.equalTo(dialogImage).inset(0)
+            make.top.equalTo(dialogImage).inset(0)
+            make.width.equalTo(17)
+            make.height.equalTo(12)
+        }
+    }
+}
