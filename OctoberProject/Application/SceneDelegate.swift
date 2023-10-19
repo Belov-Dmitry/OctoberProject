@@ -10,12 +10,20 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var coordinator: AppCoordinator?
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
+    func scene(_ scene: UIScene, 
+               willConnectTo session: UISceneSession, 
+               options connectionOptions: UIScene.ConnectionOptions) {
+
         guard let windowScene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = LoginViewController(loginViewModel: LoginViewModel()) //TabBarController()
+
+        let navController = UINavigationController()
+        coordinator = AppCoordinator(navigationController: navController)
+        coordinator?.start()
+
+        window.rootViewController = navController
         self.window = window
         window.makeKeyAndVisible()
     }
@@ -34,7 +42,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {
     }
-
-
 }
-

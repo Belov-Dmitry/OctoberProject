@@ -1,19 +1,22 @@
-
 import Foundation
 import UIKit
 import SnapKit
 
-protocol ILoginView {
-    
+protocol LoginViewDelegate: AnyObject {
+    func setLogin(login: String)
+
+    func setPassword(password: String)
+
+    func performAuth()
 }
 
 final class LoginView: UIView {
+
+    private let defaultMargin = 15.0
+    private let separatorMargin = 20.0
+    private let defaultFieldHeight = 60
     
-    private let defaultMargin = 15.0;
-    private let separatorMargin = 20.0;
-    private let defaultFieldHeight = 60;
-    
-    private lazy var titleView: UIImageView = {
+    private lazy var titleImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "TitleImg")
         imageView.backgroundColor = Colors.loginBackgroundColor
@@ -45,7 +48,9 @@ final class LoginView: UIView {
         textField.textColor = .black
         textField.keyboardType = .emailAddress
         
-        textField.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
+        var attributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        textField.attributedPlaceholder = NSAttributedString(string: "E-mail",
+                                                             attributes: attributes)
         textField.font = .systemFont(ofSize: 16.0)
         textField.tintColor = Colors.borderColor
         textField.autocapitalizationType = .none
@@ -65,7 +70,9 @@ final class LoginView: UIView {
         let textField = UITextField()
         textField.textColor = .black
         
-        textField.attributedPlaceholder = NSAttributedString(string: "Пароль", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
+        var attributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        textField.attributedPlaceholder = NSAttributedString(string: "Пароль",
+                                                             attributes: attributes)
         textField.font = .systemFont(ofSize: 16.0)
         textField.tintColor = Colors.borderColor
         textField.autocapitalizationType = .none
@@ -114,33 +121,49 @@ final class LoginView: UIView {
         return view
     }()
     
+    var delegate: LoginViewDelegate?
+
+    func enableOrDisableLoginButton(_ isEnabled: Bool) {
+        loginButton.isEnabled = isEnabled
+    }
+
     func setupUI() {
-        
+
         backgroundColor = Colors.loginBackgroundColor
-        
-        addSubview(titleView)
-        titleView.snp.makeConstraints { make in
+
+        makeBackground()
+
+        makeButtons()
+
+        makeText()
+    }
+
+    private func makeBackground() {
+        addSubview(titleImage)
+        titleImage.snp.makeConstraints { make in
             make.leading.top.trailing.equalTo(superview!)
         }
-        
+
         addSubview(roundedBottomImage)
         roundedBottomImage.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(superview!)
         }
-        
+
         addSubview(manWithDogImage)
         manWithDogImage.snp.makeConstraints { make in
             make.centerX.equalTo(superview!.safeAreaLayoutGuide.snp.centerX)
             make.bottom.equalTo(roundedBottomImage.snp.top).offset(-7)
         }
-        
+    }
+
+    private func makeButtons() {
         addSubview(restorePasswordButton)
         restorePasswordButton.snp.makeConstraints { make in
             make.leading.equalTo(superview!.safeAreaLayoutGuide).offset(defaultMargin)
             make.trailing.equalTo(superview!.safeAreaLayoutGuide.snp.centerX)
             make.bottom.equalTo(superview!.safeAreaLayoutGuide).offset(-defaultMargin)
         }
-        
+
         addSubview(verticalSeparatorView)
         verticalSeparatorView.snp.makeConstraints { make in
             make.centerX.equalTo(superview!.safeAreaLayoutGuide)
@@ -148,14 +171,14 @@ final class LoginView: UIView {
             make.width.equalTo(1)
             make.height.equalTo(18)
         }
-        
+
         addSubview(registrationButton)
         registrationButton.snp.makeConstraints { make in
             make.leading.equalTo(superview!.safeAreaLayoutGuide.snp.centerX).offset(defaultMargin)
             make.trailing.equalTo(superview!.safeAreaLayoutGuide.snp.trailing)
             make.bottom.equalTo(superview!.safeAreaLayoutGuide).offset(-defaultMargin)
         }
-        
+
         addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
             make.leading.equalTo(superview!.safeAreaLayoutGuide).offset(defaultMargin)
@@ -163,7 +186,9 @@ final class LoginView: UIView {
             make.height.equalTo(defaultFieldHeight)
             make.bottom.equalTo(restorePasswordButton.snp.top).offset(-defaultMargin)
         }
-        
+    }
+
+    private func makeText() {
         addSubview(passwordTextFileld)
         passwordTextFileld.snp.makeConstraints { make in
             make.leading.equalTo(superview!.safeAreaLayoutGuide).offset(defaultMargin)
@@ -171,7 +196,7 @@ final class LoginView: UIView {
             make.height.equalTo(defaultFieldHeight)
             make.bottom.equalTo(loginButton.snp.top).offset(-30)
         }
-        
+
         addSubview(loginTextFileld)
         loginTextFileld.snp.makeConstraints { make in
             make.leading.equalTo(superview!.safeAreaLayoutGuide).offset(defaultMargin)
@@ -179,16 +204,16 @@ final class LoginView: UIView {
             make.height.equalTo(defaultFieldHeight)
             make.bottom.equalTo(passwordTextFileld.snp.top).offset(-defaultMargin)
         }
-        
+
         addSubview(enterTextLabel)
         enterTextLabel.snp.makeConstraints { make in
             make.centerX.equalTo(superview!.safeAreaLayoutGuide)
             make.bottom.equalTo(loginTextFileld.snp.top).offset(-30)
         }
     }
-    
+
     @objc private func loginButtonPressed() {
-        print("login button pressed")
+        delegate?.performAuth()
     }
     
     @objc private func restorePasswordButtonPressed() {
@@ -199,11 +224,11 @@ final class LoginView: UIView {
         print("registration button pressed")
     }
     
-    @objc private func loginChanged(){
-        //loginViewModel.login = loginTextFileld.text!
+    @objc private func loginChanged() {
+        delegate?.setLogin(login: loginTextFileld.text!)
     }
     
-    @objc private func passwordChanged(){
-        //loginViewModel.password = passwordTextFileld.text!
+    @objc private func passwordChanged() {
+        delegate?.setPassword(password: passwordTextFileld.text!)
     }
 }

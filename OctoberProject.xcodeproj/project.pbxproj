@@ -15,6 +15,9 @@
 		8090F2242ADACE3F000776E8 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2222ADACE3F000776E8 /* Fonts.swift */; };
 		8090F2272ADB0C49000776E8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2262ADB0C49000776E8 /* LoginViewModel.swift */; };
 		8090F2292ADB0CE4000776E8 /* ILoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2282ADB0CE4000776E8 /* ILoginViewModel.swift */; };
+		80EFB53E2AE1981E00305120 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFB53D2AE1981E00305120 /* LoginCoordinator.swift */; };
+		80EFB5412AE19A8E00305120 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFB5402AE19A8E00305120 /* Coordinator.swift */; };
+		80EFB5432AE19AE700305120 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFB5422AE19AE700305120 /* AppCoordinator.swift */; };
 		DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF69792AD011F1003FFECB /* TabBarController.swift */; };
 		DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF697B2AD012C7003FFECB /* MapViewController.swift */; };
 		DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */; };
@@ -34,6 +37,9 @@
 		8090F2222ADACE3F000776E8 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		8090F2262ADB0C49000776E8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8090F2282ADB0CE4000776E8 /* ILoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoginViewModel.swift; sourceTree = "<group>"; };
+		80EFB53D2AE1981E00305120 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		80EFB5402AE19A8E00305120 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		80EFB5422AE19AE700305120 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DCAF69792AD011F1003FFECB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DCAF697B2AD012C7003FFECB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -68,8 +74,18 @@
 				8090F21E2ADACE33000776E8 /* LoginViewController.swift */,
 				8090F2262ADB0C49000776E8 /* LoginViewModel.swift */,
 				8090F2282ADB0CE4000776E8 /* ILoginViewModel.swift */,
+				80EFB53D2AE1981E00305120 /* LoginCoordinator.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		80EFB53F2AE19A8000305120 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				80EFB5402AE19A8E00305120 /* Coordinator.swift */,
+				80EFB5422AE19AE700305120 /* AppCoordinator.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		DCAF69782AD011AA003FFECB /* TabBarController */ = {
@@ -108,6 +124,7 @@
 		F4ABA4D32ACF04F20096A6DA /* OctoberProject */ = {
 			isa = PBXGroup;
 			children = (
+				80EFB53F2AE19A8000305120 /* Navigation */,
 				8090F21C2ADACE33000776E8 /* Login */,
 				DCCBF1002AD34CE00051D97B /* Helpers */,
 				DCAF69782AD011AA003FFECB /* TabBarController */,
@@ -241,8 +258,10 @@
 			files = (
 				DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */,
 				8090F2232ADACE3F000776E8 /* Colors.swift in Sources */,
+				80EFB5432AE19AE700305120 /* AppCoordinator.swift in Sources */,
 				F4ABA4D92ACF04F20096A6DA /* MessageViewController.swift in Sources */,
 				DCCBF1022AD34D0D0051D97B /* Resources.swift in Sources */,
+				80EFB5412AE19A8E00305120 /* Coordinator.swift in Sources */,
 				8090F2242ADACE3F000776E8 /* Fonts.swift in Sources */,
 				8090F21F2ADACE33000776E8 /* LoginView.swift in Sources */,
 				DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */,
@@ -251,6 +270,7 @@
 				F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */,
 				8090F2292ADB0CE4000776E8 /* ILoginViewModel.swift in Sources */,
 				DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */,
+				80EFB53E2AE1981E00305120 /* LoginCoordinator.swift in Sources */,
 				8090F2202ADACE33000776E8 /* LoginViewController.swift in Sources */,
 				F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */,
 			);

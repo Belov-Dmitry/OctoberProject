@@ -1,36 +1,25 @@
 import Foundation
 
 final class LoginViewModel: ILoginViewModel {
-    
-    
+
     init() {
         
     }
     
     var validationStateChangedAction: (() -> Void)?
     
-    var login: String = "" {
-        didSet {
-            print(login)
-            validationStateChangedAction?()
-        }
-    }
+    var login: String = ""
     
-    var password: String = "" {
-        didSet {
-            print(password)
-           validationStateChangedAction?()
-        }
-    }
+    var password: String = ""
     
     var isValid: Bool {
-        get {
-            return login != "" && password != ""
-        }
+        return login != "" && password != ""
     }
     
     func signIn() {
-        
+        if !isValid {
+            return
+        }
     }
     
     func signUp() {
