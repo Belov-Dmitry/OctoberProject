@@ -1,16 +1,20 @@
-//
-//  LoginViewController.swift
-//  OctoberProject
-//
-//  Created by Вячеслав on 08.10.2023.
-//
-
 import UIKit
 import SnapKit
 
 final class LoginViewController: UIViewController {
     
-    private let loginView: LoginView = LoginView()
+    private let loginView = LoginView()
+    private var loginViewModel: LoginViewModel
+    
+    init(loginViewModel: LoginViewModel) {
+        self.loginViewModel = loginViewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

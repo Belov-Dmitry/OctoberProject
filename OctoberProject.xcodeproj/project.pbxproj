@@ -13,6 +13,8 @@
 		8090F2202ADACE33000776E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F21E2ADACE33000776E8 /* LoginViewController.swift */; };
 		8090F2232ADACE3F000776E8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2212ADACE3F000776E8 /* Colors.swift */; };
 		8090F2242ADACE3F000776E8 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2222ADACE3F000776E8 /* Fonts.swift */; };
+		8090F2272ADB0C49000776E8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2262ADB0C49000776E8 /* LoginViewModel.swift */; };
+		8090F2292ADB0CE4000776E8 /* ILoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2282ADB0CE4000776E8 /* ILoginViewModel.swift */; };
 		DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF69792AD011F1003FFECB /* TabBarController.swift */; };
 		DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF697B2AD012C7003FFECB /* MapViewController.swift */; };
 		DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */; };
@@ -30,6 +32,8 @@
 		8090F21E2ADACE33000776E8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8090F2212ADACE3F000776E8 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8090F2222ADACE3F000776E8 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		8090F2262ADB0C49000776E8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8090F2282ADB0CE4000776E8 /* ILoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoginViewModel.swift; sourceTree = "<group>"; };
 		DCAF69792AD011F1003FFECB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DCAF697B2AD012C7003FFECB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 			children = (
 				8090F21D2ADACE33000776E8 /* LoginView.swift */,
 				8090F21E2ADACE33000776E8 /* LoginViewController.swift */,
+				8090F2262ADB0C49000776E8 /* LoginViewModel.swift */,
+				8090F2282ADB0CE4000776E8 /* ILoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -241,7 +247,9 @@
 				8090F21F2ADACE33000776E8 /* LoginView.swift in Sources */,
 				DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */,
 				DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */,
+				8090F2272ADB0C49000776E8 /* LoginViewModel.swift in Sources */,
 				F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */,
+				8090F2292ADB0CE4000776E8 /* ILoginViewModel.swift in Sources */,
 				DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */,
 				8090F2202ADACE33000776E8 /* LoginViewController.swift in Sources */,
 				F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */,

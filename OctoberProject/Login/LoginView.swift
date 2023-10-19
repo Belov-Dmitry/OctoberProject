@@ -3,6 +3,10 @@ import Foundation
 import UIKit
 import SnapKit
 
+protocol ILoginView {
+    
+}
+
 final class LoginView: UIView {
     
     private let defaultMargin = 15.0;
@@ -50,7 +54,7 @@ final class LoginView: UIView {
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.addTarget(self, action: #selector(loginOrPasswordTextChanged), for: .editingChanged)
+        textField.addTarget(self, action: #selector(loginChanged), for: .editingChanged)
         textField.layer.borderColor = Colors.borderColor.cgColor
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 10
@@ -68,7 +72,7 @@ final class LoginView: UIView {
         textField.isSecureTextEntry = true
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: defaultMargin, height: 50))
         textField.leftViewMode = .always
-        textField.addTarget(self, action: #selector(loginOrPasswordTextChanged), for: .editingChanged)
+        textField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
         textField.layer.borderColor = Colors.borderColor.cgColor
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 10
@@ -79,6 +83,7 @@ final class LoginView: UIView {
         let button = UIButton()
         button.setTitle("Далее", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.lightText, for: .disabled)
         button.backgroundColor = Colors.buttonColor
         button.layer.cornerRadius = 30
         button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
@@ -194,7 +199,11 @@ final class LoginView: UIView {
         print("registration button pressed")
     }
     
-    @objc private func loginOrPasswordTextChanged(){
-        print("loginOrPasswordTextChanged")
+    @objc private func loginChanged(){
+        //loginViewModel.login = loginTextFileld.text!
+    }
+    
+    @objc private func passwordChanged(){
+        //loginViewModel.password = passwordTextFileld.text!
     }
 }
