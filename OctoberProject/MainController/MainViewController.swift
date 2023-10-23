@@ -22,6 +22,7 @@ class MainViewController: UIViewController, UITabBarControllerDelegate, UICollec
         tabBarController?.delegate = self
         view.backgroundColor = backColor
         initialize()
+        
     }
     
     
@@ -57,11 +58,11 @@ class MainViewController: UIViewController, UITabBarControllerDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
-        return CGSize(width: width, height: width)
+        let height: CGFloat = width
+        return CGSize(width: width, height: height)
         
     }
     
-   
     func initialize() {
         //MARK: - настройка collectionView
         let layout = UICollectionViewFlowLayout()
@@ -76,11 +77,10 @@ class MainViewController: UIViewController, UITabBarControllerDelegate, UICollec
         collectionView.contentInsetAdjustmentBehavior = .never
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.leading.trailing.top.equalToSuperview()
+            make.bottom.equalToSuperview().inset(93)
         }
-        
     }
-    
 }
 
 extension MainViewController: MainTopCellDelegate {

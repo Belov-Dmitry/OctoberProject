@@ -16,6 +16,8 @@ class MainTopCell: UICollectionViewCell {
     // MARK: - Public
     
     weak var delegate: MainTopCellDelegate?
+    var aboutPersonData: String = "Нажмите чтобы редактироватьНажмите чтобы редактироватьНажмите чтобы редактироватьНажмите чтобы редактироватьНажмите чтобы редактироватьНажмите чтобы редактироватьНажмите чтобы редактировать"
+    
     
     func configure() {
         personPhoto.image = UIImage(named: "person")
@@ -27,12 +29,11 @@ class MainTopCell: UICollectionViewCell {
         timeForAWalkLabel.text = "На прогулке ещё 15 минут"
         var dialogButtonImageName = "ChatWithoutNotifications"
         dialogButton.setImage(UIImage(named: dialogButtonImageName), for: .normal)
-        personInfoViewTitleLabel.text = "О себе"
         let messageCountNotificationLabelText = "10"
         messageCountNotificationLabel.text = messageCountNotificationLabelText
-        personInfoViewButton.addTarget(self, action: #selector(didTapPersonInfoViewButton), for: .touchUpInside)
-        
-        
+
+        personInfoViewLabel.text = aboutPersonData
+     
     }
   
     
@@ -40,6 +41,7 @@ class MainTopCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
+        setupPersonInfoViewLabelTap()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -51,7 +53,7 @@ class MainTopCell: UICollectionViewCell {
         static let personAndPetNameLabelFontSize: CGFloat = 20
         static let timeForAWalkLabelFontSize: CGFloat = 14
         static let dialogImageSize: CGFloat = 47
-        static let personInfoViewHeight = 100
+        static var personInfoViewHeight = 87
         static let personInfoViewTitleLabelFontSize: CGFloat = 13
         static let messageCountNotificationLabelFont: CGFloat = 7
         
@@ -123,12 +125,10 @@ class MainTopCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: UIConstants.personInfoViewTitleLabelFontSize)
         return label
     }()
-    private let personInfoViewButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Нажмите чтобы редактировать", for: .normal)
-        button.titleLabel?.font = UIFont(name: "SF UI Text", size: 16)
-        button.tintColor = UIColor(red: 49/255, green: 101/255, blue: 200/255, alpha: 1)
-        return button
+    private let personInfoViewLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 5
+        return label
     }()
     private let messageCountNotificationLabel: UILabel = {
         let label = UILabel()
@@ -140,12 +140,81 @@ class MainTopCell: UICollectionViewCell {
         label.backgroundColor = UIColor(red: 250/255, green: 46/255, blue: 105/255, alpha: 1)
         return label
     }()
+    private let personInfoEditView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "editButton")
+        return view
+    }()
     
-    @objc private func didTapPersonInfoViewButton() {
-        delegate?.didTapPersonInfoViewButton()
+//    @objc private func didTapPersonInfoViewButton() {
+//        delegate?.didTapPersonInfoViewButton()
+//    }
+    @objc func personInfoViewLabelTap(_ sender: UITapGestureRecognizer){
+        print("label pressed")
+    }
+    func setupPersonInfoViewLabelTap() {
+        if aboutPersonData == "Нажмите чтобы редактировать" {
+            personInfoViewLabel.font = UIFont(name: "SF UI Text", size: 16)
+            personInfoViewLabel.textColor = UIColor(red: 49/255, green: 101/255, blue: 200/255, alpha: 1)
+            personInfoViewTitleLabel.text = "О себе"
+            let personInfoViewLabelTap = UITapGestureRecognizer(target: self, action: #selector(self.personInfoViewLabelTap(_:)))
+            self.personInfoViewLabel.isUserInteractionEnabled = true
+            self.personInfoViewLabel.addGestureRecognizer(personInfoViewLabelTap)
+            
+            contentView.addSubview(personInfoView)
+            personInfoView.snp.makeConstraints { make in
+                make.top.equalToSuperview().inset(267)
+                make.width.equalToSuperview()
+                make.height.equalTo(87)
+            }
+            contentView.addSubview(personInfoViewTitleLabel)
+            personInfoViewTitleLabel.snp.makeConstraints { make in
+                make.top.equalTo(personInfoView).inset(20)
+                make.leading.equalTo(personInfoView).inset(20)
+            }
+            contentView.addSubview(personInfoViewLabel)
+            personInfoViewLabel.snp.makeConstraints { make in
+                make.top.equalTo(personInfoView).inset(46)
+                make.left.right.equalToSuperview().inset(20)
+            }
+        }
+        else {
+            personInfoViewLabel.font = UIFont(name: "SF UI Text", size: 8)
+            personInfoViewLabel.textColor = UIColor(red: 129/255, green: 138/255, blue: 150/255, alpha: 1)
+            personInfoViewTitleLabel.text = "Основная информация"
+            contentView.addSubview(personInfoView)
+            personInfoView.snp.makeConstraints { make in
+                make.top.equalToSuperview().inset(267)
+                make.width.equalToSuperview()
+                make.height.equalTo(171)
+            }
+            contentView.addSubview(personInfoViewTitleLabel)
+            personInfoViewTitleLabel.snp.makeConstraints { make in
+                make.top.equalTo(personInfoView).inset(20)
+                make.leading.equalTo(personInfoView).inset(20)
+            }
+            contentView.addSubview(personInfoViewLabel)
+            personInfoViewLabel.snp.makeConstraints { make in
+                make.top.equalTo(personInfoView).inset(46)
+                make.left.right.equalToSuperview().inset(20)
+            }
+            contentView.addSubview(personInfoEditView)
+            personInfoEditView.snp.makeConstraints { make in
+                make.width.height.equalTo(11)
+                make.top.equalTo(personInfoView).inset(15)
+                make.right.equalTo(personInfoView).inset(18)
+                
+            }
+        }
+        
     }
     
 }
+
+
+
+
+
 // MARK: - Private methods
 private extension MainTopCell {
     func initialize (){       
@@ -205,22 +274,6 @@ private extension MainTopCell {
             make.top.equalToSuperview().inset(134)
             make.height.equalTo(46)
         }
-        contentView.addSubview(personInfoView)
-        personInfoView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(267)
-            make.width.equalToSuperview()
-            make.height.equalTo(UIConstants.personInfoViewHeight)
-        }
-        contentView.addSubview(personInfoViewTitleLabel)
-        personInfoViewTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(personInfoView).inset(20)
-            make.leading.equalTo(personInfoView).inset(20)
-        }
-        contentView.addSubview(personInfoViewButton)
-        personInfoViewButton.snp.makeConstraints { make in
-            make.top.equalTo(personInfoViewTitleLabel).inset(10)
-            make.leading.equalTo(personInfoView).inset(20)
-        }
         contentView.addSubview(messageCountNotificationLabel)
         messageCountNotificationLabel.snp.makeConstraints { make in
             make.trailing.equalTo(dialogImage).inset(0)
@@ -228,5 +281,13 @@ private extension MainTopCell {
             make.width.equalTo(17)
             make.height.equalTo(12)
         }
+//        contentView.addSubview(personInfoView)
+//        personInfoView.snp.makeConstraints { make in
+//            make.top.equalToSuperview().inset(267)
+//            make.width.equalToSuperview()
+//            make.height.equalTo(UIConstants.personInfoViewHeight)
+//        }
+        
+        
     }
 }
