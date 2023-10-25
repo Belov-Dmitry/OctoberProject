@@ -8,6 +8,8 @@ protocol LoginViewDelegate: AnyObject {
     func setPassword(password: String)
 
     func performAuth()
+
+    func restorePassword()
 }
 
 final class LoginView: UIView {
@@ -121,7 +123,7 @@ final class LoginView: UIView {
         return view
     }()
     
-    var delegate: LoginViewDelegate?
+    weak var delegate: LoginViewDelegate?
 
     func enableOrDisableLoginButton(_ isEnabled: Bool) {
         loginButton.isEnabled = isEnabled
@@ -217,7 +219,7 @@ final class LoginView: UIView {
     }
     
     @objc private func restorePasswordButtonPressed() {
-        print("restore button pressed")
+        delegate?.restorePassword()
     }
     
     @objc private func registrationButtonPressed() {

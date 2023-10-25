@@ -1,16 +1,10 @@
-//
-//  Colors.swift
-//  OctoberProject
-//
-//  Created by Вячеслав on 08.10.2023.
-//
-
 import Foundation
 import UIKit
 
 final class Colors {
     public static let loginBackgroundColor = UIColorUtils.createFromRGB(red: 55, green: 109, blue: 254)
-    
+    public static let restorePasswordBacgroundColor = UIColorUtils.createFromRGB(red: 249, green: 249, blue: 251)
+
     public static let buttonColor = UIColorUtils.createFromRGB(red: 29, green: 133, blue: 255)
     
     public static let buttonColor2 = UIColorUtils.createFromRGB(red: 111, green: 119, blue: 132)

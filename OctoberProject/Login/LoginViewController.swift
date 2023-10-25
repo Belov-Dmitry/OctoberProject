@@ -26,7 +26,11 @@ final class LoginViewController: UIViewController {
         loginView.enableOrDisableLoginButton(false)
     }
     
-    var coordinator: Coordinator?
+    var loginCoordinator: Coordinator?
+
+    var restorePasswordCoordinator: Coordinator?
+
+    var registrationCoordinator: Coordinator?
 
     private func initLoginView() {
        
@@ -35,15 +39,12 @@ final class LoginViewController: UIViewController {
             make.leading.top.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         loginView.setupUI()
+
+        self.navigationItem.title = ""
     }
 }
 
 extension LoginViewController: LoginViewDelegate {
-    func performAuth() {
-        loginViewModel.signIn()
-
-        coordinator?.start()
-    }
     
     func setLogin(login: String) {
         self.loginViewModel.login = login
@@ -53,5 +54,15 @@ extension LoginViewController: LoginViewDelegate {
     func setPassword(password: String) {
         self.loginViewModel.password = password
         loginView.enableOrDisableLoginButton(loginViewModel.isValid)
+    }
+
+    func restorePassword() {
+        restorePasswordCoordinator?.start()
+    }
+
+    func performAuth() {
+        loginViewModel.signIn()
+
+        loginCoordinator?.start()
     }
 }
