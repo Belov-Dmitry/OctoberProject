@@ -9,11 +9,21 @@
 /* Begin PBXBuildFile section */
 		8090F2192ADACDC1000776E8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8090F2182ADACDC1000776E8 /* SnapKit */; };
 		8090F21B2ADACDC1000776E8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8090F21A2ADACDC1000776E8 /* SnapKit-Dynamic */; };
+		DC0130692ADD6DB100B7F722 /* NavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0130682ADD6DB100B7F722 /* NavigationCell.swift */; };
+		DC01306C2ADD6E8D00B7F722 /* CollectionNavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC01306B2ADD6E8D00B7F722 /* CollectionNavigationCell.swift */; };
+		DC2C7D5D2AE819B400EC1A1B /* ExampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C7D5C2AE819B400EC1A1B /* ExampleDataSource.swift */; };
+		DC2C7D5F2AE92BF700EC1A1B /* CollectionViewCompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C7D5E2AE92BF700EC1A1B /* CollectionViewCompositionalLayout.swift */; };
+		DC2C7D612AE95AFC00EC1A1B /* ButtonsNavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C7D602AE95AFC00EC1A1B /* ButtonsNavigationCell.swift */; };
+		DC2C7D632AEA67A600EC1A1B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C7D622AEA67A600EC1A1B /* Item.swift */; };
 		DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF69792AD011F1003FFECB /* TabBarController.swift */; };
 		DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF697B2AD012C7003FFECB /* MapViewController.swift */; };
 		DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */; };
 		DCCBF1022AD34D0D0051D97B /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBF1012AD34D0D0051D97B /* Resources.swift */; };
 		DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBF1032AD34D2C0051D97B /* Tab.swift */; };
+		DCD794082ADFC6C9005DB1A5 /* CollectionMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD794072ADFC6C9005DB1A5 /* CollectionMessageCell.swift */; };
+		DCD7940C2ADFD1D6005DB1A5 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7940B2ADFD1D6005DB1A5 /* MockData.swift */; };
+		DCD794102AE01C8F005DB1A5 /* BorderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7940F2AE01C8F005DB1A5 /* BorderCell.swift */; };
+		DCD794132AE07FD1005DB1A5 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD794122AE07FD1005DB1A5 /* MessageCell.swift */; };
 		F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D42ACF04F20096A6DA /* AppDelegate.swift */; };
 		F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D62ACF04F20096A6DA /* SceneDelegate.swift */; };
 		F4ABA4D92ACF04F20096A6DA /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D82ACF04F20096A6DA /* MessageViewController.swift */; };
@@ -22,11 +32,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC0130682ADD6DB100B7F722 /* NavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCell.swift; sourceTree = "<group>"; };
+		DC01306B2ADD6E8D00B7F722 /* CollectionNavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNavigationCell.swift; sourceTree = "<group>"; };
+		DC2C7D5C2AE819B400EC1A1B /* ExampleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDataSource.swift; sourceTree = "<group>"; };
+		DC2C7D5E2AE92BF700EC1A1B /* CollectionViewCompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCompositionalLayout.swift; sourceTree = "<group>"; };
+		DC2C7D602AE95AFC00EC1A1B /* ButtonsNavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsNavigationCell.swift; sourceTree = "<group>"; };
+		DC2C7D622AEA67A600EC1A1B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		DCAF69792AD011F1003FFECB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DCAF697B2AD012C7003FFECB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DCCBF1012AD34D0D0051D97B /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		DCCBF1032AD34D2C0051D97B /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		DCD794072ADFC6C9005DB1A5 /* CollectionMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMessageCell.swift; sourceTree = "<group>"; };
+		DCD7940B2ADFD1D6005DB1A5 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		DCD7940F2AE01C8F005DB1A5 /* BorderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderCell.swift; sourceTree = "<group>"; };
+		DCD794122AE07FD1005DB1A5 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		F4ABA4D12ACF04F20096A6DA /* OctoberProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoberProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4ABA4D42ACF04F20096A6DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4ABA4D62ACF04F20096A6DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +69,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC0130642ADD6A8900B7F722 /* MessageController */ = {
+			isa = PBXGroup;
+			children = (
+				DC0130652ADD6AB700B7F722 /* CollectionView */,
+				F4ABA4D82ACF04F20096A6DA /* MessageViewController.swift */,
+			);
+			path = MessageController;
+			sourceTree = "<group>";
+		};
+		DC0130652ADD6AB700B7F722 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DCD794112AE07FAC005DB1A5 /* Cells */,
+				DC2C7D5C2AE819B400EC1A1B /* ExampleDataSource.swift */,
+				DC2C7D5E2AE92BF700EC1A1B /* CollectionViewCompositionalLayout.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DC01306A2ADD6E4F00B7F722 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC01306B2ADD6E8D00B7F722 /* CollectionNavigationCell.swift */,
+				DCD794072ADFC6C9005DB1A5 /* CollectionMessageCell.swift */,
+				DCD7940B2ADFD1D6005DB1A5 /* MockData.swift */,
+				DC2C7D622AEA67A600EC1A1B /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DCAF69782AD011AA003FFECB /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +114,17 @@
 				DCCBF1032AD34D2C0051D97B /* Tab.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DCD794112AE07FAC005DB1A5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DC0130682ADD6DB100B7F722 /* NavigationCell.swift */,
+				DCD7940F2AE01C8F005DB1A5 /* BorderCell.swift */,
+				DCD794122AE07FD1005DB1A5 /* MessageCell.swift */,
+				DC2C7D602AE95AFC00EC1A1B /* ButtonsNavigationCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F4ABA4C82ACF04F20096A6DA = {
@@ -86,12 +147,13 @@
 			isa = PBXGroup;
 			children = (
 				DCCBF1002AD34CE00051D97B /* Helpers */,
+				DC01306A2ADD6E4F00B7F722 /* Model */,
+				DC0130642ADD6A8900B7F722 /* MessageController */,
 				DCAF69782AD011AA003FFECB /* TabBarController */,
 				F4ABA4EA2ACF198A0096A6DA /* Application */,
 				F4ABA4EB2ACF19940096A6DA /* Resources */,
 				DCAF697B2AD012C7003FFECB /* MapViewController.swift */,
 				DCAF697D2AD012D8003FFECB /* ProfileViewController.swift */,
-				F4ABA4D82ACF04F20096A6DA /* MessageViewController.swift */,
 			);
 			path = OctoberProject;
 			sourceTree = "<group>";
@@ -204,7 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\n# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -213,14 +275,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD794132AE07FD1005DB1A5 /* MessageCell.swift in Sources */,
 				DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */,
+				DC2C7D612AE95AFC00EC1A1B /* ButtonsNavigationCell.swift in Sources */,
 				F4ABA4D92ACF04F20096A6DA /* MessageViewController.swift in Sources */,
+				DCD7940C2ADFD1D6005DB1A5 /* MockData.swift in Sources */,
+				DCD794082ADFC6C9005DB1A5 /* CollectionMessageCell.swift in Sources */,
 				DCCBF1022AD34D0D0051D97B /* Resources.swift in Sources */,
+				DC2C7D5D2AE819B400EC1A1B /* ExampleDataSource.swift in Sources */,
 				DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */,
 				DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */,
+				DC2C7D632AEA67A600EC1A1B /* Item.swift in Sources */,
+				DC2C7D5F2AE92BF700EC1A1B /* CollectionViewCompositionalLayout.swift in Sources */,
+				DC0130692ADD6DB100B7F722 /* NavigationCell.swift in Sources */,
 				F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */,
 				DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */,
+				DC01306C2ADD6E8D00B7F722 /* CollectionNavigationCell.swift in Sources */,
 				F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */,
+				DCD794102AE01C8F005DB1A5 /* BorderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
