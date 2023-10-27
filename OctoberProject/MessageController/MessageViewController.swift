@@ -9,8 +9,6 @@ import UIKit
 import SnapKit
 
 final class MessageViewController: UIViewController {
-
-//    var sections = [["fsndos", "ewkwed"], ["wefg", "ewfef", "fhje", "wefg", "ewfef", "fhje"]]
     
     private let collection = CollectionViewCompositionalLayout()
     private let text = UIFont.systemFont(ofSize: 18)
@@ -20,7 +18,7 @@ final class MessageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = Resources.Colors.backgroundMessage
         
         configureApperance()
     }
