@@ -18,7 +18,8 @@ final class AppCoordinator: Coordinator {
 
     func start() {
         let loginViewController = LoginViewController(loginViewModel: LoginViewModel())
-        loginViewController.coordinator = LoginCoordinator(navigationController: navigationController)
+        loginViewController.loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        loginViewController.restorePasswordCoordinator = RestorePasswordCoordinator(navigationController: navigationController)
         navigationController.pushViewController(loginViewController, animated: true)
     }
 }

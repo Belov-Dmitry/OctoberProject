@@ -15,6 +15,10 @@
 		8090F2242ADACE3F000776E8 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2222ADACE3F000776E8 /* Fonts.swift */; };
 		8090F2272ADB0C49000776E8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2262ADB0C49000776E8 /* LoginViewModel.swift */; };
 		8090F2292ADB0CE4000776E8 /* ILoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090F2282ADB0CE4000776E8 /* ILoginViewModel.swift */; };
+		80E922BD2AE952A600F69159 /* RestorePasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E922BC2AE952A600F69159 /* RestorePasswordCoordinator.swift */; };
+		80E922BF2AE952DD00F69159 /* RestorePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E922BE2AE952DD00F69159 /* RestorePasswordController.swift */; };
+		80E922C12AE9542E00F69159 /* RestorePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E922C02AE9542E00F69159 /* RestorePasswordViewModel.swift */; };
+		80E922C32AE9549900F69159 /* RestorePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E922C22AE9549900F69159 /* RestorePasswordView.swift */; };
 		80EFB53E2AE1981E00305120 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFB53D2AE1981E00305120 /* LoginCoordinator.swift */; };
 		80EFB5412AE19A8E00305120 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFB5402AE19A8E00305120 /* Coordinator.swift */; };
 		80EFB5432AE19AE700305120 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFB5422AE19AE700305120 /* AppCoordinator.swift */; };
@@ -37,6 +41,10 @@
 		8090F2222ADACE3F000776E8 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		8090F2262ADB0C49000776E8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8090F2282ADB0CE4000776E8 /* ILoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoginViewModel.swift; sourceTree = "<group>"; };
+		80E922BC2AE952A600F69159 /* RestorePasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordCoordinator.swift; sourceTree = "<group>"; };
+		80E922BE2AE952DD00F69159 /* RestorePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordController.swift; sourceTree = "<group>"; };
+		80E922C02AE9542E00F69159 /* RestorePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordViewModel.swift; sourceTree = "<group>"; };
+		80E922C22AE9549900F69159 /* RestorePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordView.swift; sourceTree = "<group>"; };
 		80EFB53D2AE1981E00305120 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		80EFB5402AE19A8E00305120 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		80EFB5422AE19AE700305120 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -77,6 +85,17 @@
 				80EFB53D2AE1981E00305120 /* LoginCoordinator.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		80E922BB2AE9528600F69159 /* RestorePassword */ = {
+			isa = PBXGroup;
+			children = (
+				80E922BC2AE952A600F69159 /* RestorePasswordCoordinator.swift */,
+				80E922BE2AE952DD00F69159 /* RestorePasswordController.swift */,
+				80E922C02AE9542E00F69159 /* RestorePasswordViewModel.swift */,
+				80E922C22AE9549900F69159 /* RestorePasswordView.swift */,
+			);
+			path = RestorePassword;
 			sourceTree = "<group>";
 		};
 		80EFB53F2AE19A8000305120 /* Navigation */ = {
@@ -124,6 +143,7 @@
 		F4ABA4D32ACF04F20096A6DA /* OctoberProject */ = {
 			isa = PBXGroup;
 			children = (
+				80E922BB2AE9528600F69159 /* RestorePassword */,
 				80EFB53F2AE19A8000305120 /* Navigation */,
 				8090F21C2ADACE33000776E8 /* Login */,
 				DCCBF1002AD34CE00051D97B /* Helpers */,
@@ -256,13 +276,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E922C12AE9542E00F69159 /* RestorePasswordViewModel.swift in Sources */,
 				DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */,
+				80E922C32AE9549900F69159 /* RestorePasswordView.swift in Sources */,
 				8090F2232ADACE3F000776E8 /* Colors.swift in Sources */,
 				80EFB5432AE19AE700305120 /* AppCoordinator.swift in Sources */,
 				F4ABA4D92ACF04F20096A6DA /* MessageViewController.swift in Sources */,
 				DCCBF1022AD34D0D0051D97B /* Resources.swift in Sources */,
 				80EFB5412AE19A8E00305120 /* Coordinator.swift in Sources */,
 				8090F2242ADACE3F000776E8 /* Fonts.swift in Sources */,
+				80E922BF2AE952DD00F69159 /* RestorePasswordController.swift in Sources */,
 				8090F21F2ADACE33000776E8 /* LoginView.swift in Sources */,
 				DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */,
 				DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */,
@@ -270,6 +293,7 @@
 				F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */,
 				8090F2292ADB0CE4000776E8 /* ILoginViewModel.swift in Sources */,
 				DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */,
+				80E922BD2AE952A600F69159 /* RestorePasswordCoordinator.swift in Sources */,
 				80EFB53E2AE1981E00305120 /* LoginCoordinator.swift in Sources */,
 				8090F2202ADACE33000776E8 /* LoginViewController.swift in Sources */,
 				F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */,
