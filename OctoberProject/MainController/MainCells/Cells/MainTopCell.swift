@@ -8,45 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol MainTopCellDelegate: AnyObject {
-    func didTapPersonInfoViewButton()
-}
 class MainTopCell: UICollectionViewCell {
-    
-    // MARK: - Public
-    
-    weak var delegate: MainTopCellDelegate?
-    var aboutPersonData: String = "Нажмите чтобы редактироватьНажмите чтобы редактироватьНажмите чтобы редактироватьНажмите чтобы редактироватьНажмите чтобы редактироватьНажмите чтобы редактироватьНажмите чтобы редактировать"
-    
-    
-    func configure() {
-        personPhoto.image = UIImage(named: "person")
-        petPhoto.image = UIImage(named: "pet")
-        let personName = "Name"
-        let petName = "PetName"
-        personAndPetNameLabel.text = "\(personName) и \(petName)"
-        onlineIndicatorImage.image = UIImage(named: "onlineIndicator")
-        timeForAWalkLabel.text = "На прогулке ещё 15 минут"
-        var dialogButtonImageName = "ChatWithoutNotifications"
-        dialogButton.setImage(UIImage(named: dialogButtonImageName), for: .normal)
-        let messageCountNotificationLabelText = "10"
-        messageCountNotificationLabel.text = messageCountNotificationLabelText
-
-        personInfoViewLabel.text = aboutPersonData
-     
-    }
-  
-    
-    // MARK: - Init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-        setupPersonInfoViewLabelTap()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    // MARK: - Private constants
     private enum UIConstants {
         static let personPhoto: CGFloat = 118
         static let petPhoto: CGFloat = 80
@@ -56,12 +18,11 @@ class MainTopCell: UICollectionViewCell {
         static var personInfoViewHeight = 87
         static let personInfoViewTitleLabelFontSize: CGFloat = 13
         static let messageCountNotificationLabelFont: CGFloat = 7
-        
-        
+        static let backColor = UIColor(red: 250/255, green: 250/255, blue: 252/255, alpha: 1)
+        static let settingsButtonBorderColor = CGColor(red: 237/255, green: 237/255, blue: 240/255, alpha: 1)
+        static let messageCountNotificationLabelBackroundColor = UIColor(red: 250/255, green: 46/255, blue: 105/255, alpha: 1)
     }
-    // MARK: - Private properties
     private let topImage = UIImageView()
-    
     private let personPhoto: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = UIConstants.personPhoto / 2
@@ -93,7 +54,7 @@ class MainTopCell: UICollectionViewCell {
         let view = UIImageView()
         view.layer.cornerRadius = UIConstants.dialogImageSize / 2
         view.clipsToBounds = true
-        view.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 252/255, alpha: 1)
+        view.backgroundColor = UIConstants.backColor
         return view
     }()
     private let dialogButton: UIButton = {
@@ -106,11 +67,11 @@ class MainTopCell: UICollectionViewCell {
         button.setImage(UIImage(named: "Settings"), for: .normal)
         button.setTitle(" Настройки", for: .normal)
         button.tintColor = .black
-        button.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 252/255, alpha: 1)
+        button.backgroundColor = UIConstants.backColor
         button.layer.cornerRadius = 23
         button.clipsToBounds = true
         button.layer.borderWidth = 3
-        button.layer.borderColor = CGColor(red: 237/255, green: 237/255, blue: 240/255, alpha: 1)
+        button.layer.borderColor = UIConstants.settingsButtonBorderColor
         return button
     }()
     private let personInfoView: UIView = {
@@ -137,7 +98,7 @@ class MainTopCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: UIConstants.messageCountNotificationLabelFont, weight: .bold)
         label.textColor = .white
         label.textAlignment = .center
-        label.backgroundColor = UIColor(red: 250/255, green: 46/255, blue: 105/255, alpha: 1)
+        label.backgroundColor = UIConstants.messageCountNotificationLabelBackroundColor
         return label
     }()
     private let personInfoEditView: UIImageView = {
@@ -145,10 +106,33 @@ class MainTopCell: UICollectionViewCell {
         view.image = UIImage(named: "editButton")
         return view
     }()
+    var dialogButtonImageName = "ChatWithoutNotifications"
+    var aboutPersonData: String = "Нажмите чтобы редактировать"
+    var messageCountNotificationLabelText = "10"
+    var personName = "Name"
+    var petName = "PetName"
     
-//    @objc private func didTapPersonInfoViewButton() {
-//        delegate?.didTapPersonInfoViewButton()
-//    }
+    
+// MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+        setupPersonInfoViewLabelTap()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+// MARK: - methods
+    func configure() {
+        personPhoto.image = UIImage(named: "person")
+        petPhoto.image = UIImage(named: "pet")
+        personAndPetNameLabel.text = "\(personName) и \(petName)"
+        onlineIndicatorImage.image = UIImage(named: "onlineIndicator")
+        timeForAWalkLabel.text = "На прогулке ещё 15 минут"
+        dialogButton.setImage(UIImage(named: dialogButtonImageName), for: .normal)
+        messageCountNotificationLabel.text = messageCountNotificationLabelText
+        personInfoViewLabel.text = aboutPersonData
+    }
     @objc func personInfoViewLabelTap(_ sender: UITapGestureRecognizer){
         print("label pressed")
     }
@@ -182,6 +166,7 @@ class MainTopCell: UICollectionViewCell {
             personInfoViewLabel.font = UIFont(name: "SF UI Text", size: 8)
             personInfoViewLabel.textColor = UIColor(red: 129/255, green: 138/255, blue: 150/255, alpha: 1)
             personInfoViewTitleLabel.text = "Основная информация"
+            
             contentView.addSubview(personInfoView)
             personInfoView.snp.makeConstraints { make in
                 make.top.equalToSuperview().inset(267)
@@ -203,18 +188,10 @@ class MainTopCell: UICollectionViewCell {
                 make.width.height.equalTo(11)
                 make.top.equalTo(personInfoView).inset(15)
                 make.right.equalTo(personInfoView).inset(18)
-                
             }
         }
-        
     }
-    
 }
-
-
-
-
-
 // MARK: - Private methods
 private extension MainTopCell {
     func initialize (){       
@@ -281,13 +258,5 @@ private extension MainTopCell {
             make.width.equalTo(17)
             make.height.equalTo(12)
         }
-//        contentView.addSubview(personInfoView)
-//        personInfoView.snp.makeConstraints { make in
-//            make.top.equalToSuperview().inset(267)
-//            make.width.equalToSuperview()
-//            make.height.equalTo(UIConstants.personInfoViewHeight)
-//        }
-        
-        
     }
 }

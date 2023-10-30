@@ -8,63 +8,26 @@
 import UIKit
 import SnapKit
 
-class MainViewController: UIViewController, UITabBarControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+class MainViewController: UIViewController, UITabBarControllerDelegate {
     var collectionView: UICollectionView!
-    
-    private let backColor = UIColor(red: 250/255, green: 250/255, blue: 252/255, alpha: 1)
-    var label = UILabel()
     var personPhoto: UIImageView!
     var petPhoto: UIImageView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tabBarController?.delegate = self
-        view.backgroundColor = backColor
-        initialize()
-        
+    private enum UIConstants {
+        static let backColor = UIColor(red: 250/255, green: 250/255, blue: 252/255, alpha: 1)
     }
-    
-    
-    // MARK: - UICollectionViewDataSource
-    
     private let items: [PostItem] = [
         PostItem(type: .MainTopCell),
         PostItem(type: .MainPetInfoCell)
     ]
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tabBarController?.delegate = self
+        view.backgroundColor = UIConstants.backColor
+        initialize()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = items[indexPath.row]
-        switch item.type {
-        case .MainTopCell:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainTopCell", for: indexPath) as! MainTopCell
-            cell.configure()
-            cell.delegate = self
-            return cell
-        case .MainPetInfoCell:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPetInfoCell", for: indexPath) as! MainPetInfoCell
-            cell.configure()
-            return cell
-        }
-        
-    }
-    
-    
-    // MARK: - UICollectionViewDelegateFlowLayout
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width
-        let height: CGFloat = width
-        return CGSize(width: width, height: height)
-        
-    }
-    
+//MARK: - настройка collectionView
     func initialize() {
-        //MARK: - настройка collectionView
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
@@ -72,7 +35,7 @@ class MainViewController: UIViewController, UITabBarControllerDelegate, UICollec
         collectionView.delegate = self
         collectionView.register(MainTopCell.self, forCellWithReuseIdentifier: "MainTopCell")
         collectionView.register(MainPetInfoCell.self, forCellWithReuseIdentifier: "MainPetInfoCell")
-        collectionView.backgroundColor = backColor
+        collectionView.backgroundColor = UIConstants.backColor
         collectionView.showsVerticalScrollIndicator = false
         collectionView.contentInsetAdjustmentBehavior = .never
         view.addSubview(collectionView)
@@ -82,9 +45,30 @@ class MainViewController: UIViewController, UITabBarControllerDelegate, UICollec
         }
     }
 }
-
-extension MainViewController: MainTopCellDelegate {
-    func didTapPersonInfoViewButton() {
-        print("didTapPersonInfoViewButton pressed in VC")
+// MARK: - UICollectionViewDataSource
+extension MainViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = items[indexPath.row]
+        switch item.type {
+        case .MainTopCell:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainTopCell", for: indexPath) as! MainTopCell
+            cell.configure()
+            return cell
+        case .MainPetInfoCell:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPetInfoCell", for: indexPath) as! MainPetInfoCell
+            cell.configure()
+            return cell
+        }
+    }
+}
+// MARK: - UICollectionViewDelegateFlowLayout
+extension MainViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width
+        let height: CGFloat = width
+        return CGSize(width: width, height: height)
     }
 }
