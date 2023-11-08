@@ -2,14 +2,14 @@
 //  PetLoadMediaCollectionViewCell.swift
 //  OctoberProject
 //
-//  Created by Dmitry Belov on 15.10.2023.
+//  Created by Dmitry Belov on 01.11.2023.
 //
 
 import UIKit
+import SnapKit
 
 class PetLoadMediaCollectionViewCell: UICollectionViewCell {
     private enum UIConstants {
-        static let petMediaCollectionViewCellSize = 106
         static let petMediaCollectionViewCellcornerRadius: CGFloat = 6
     }
     private let petMedia: UIImageView = {
@@ -32,9 +32,7 @@ private extension PetLoadMediaCollectionViewCell {
     func initialize(){
         contentView.addSubview(petMedia)
         petMedia.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.width.equalToSuperview()
-            make.height.equalToSuperview()
+            make.top.size.equalToSuperview()
         }
         petMedia.image = UIImage(named: "petLoadMedia")
     }

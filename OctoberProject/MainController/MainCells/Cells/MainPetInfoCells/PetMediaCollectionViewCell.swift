@@ -2,21 +2,21 @@
 //  PetMediaCollectionViewCell.swift
 //  OctoberProject
 //
-//  Created by Dmitry Belov on 14.10.2023.
+//  Created by Dmitry Belov on 01.11.2023.
 //
-
 import UIKit
 import SnapKit
 
 class PetMediaCollectionViewCell: UICollectionViewCell {
     private enum UIConstants {
-        static let petMediaCollectionViewCellSize = 106
         static let petMediaCollectionViewCellcornerRadius: CGFloat = 6
+        static let petMediaCollectionBackColor = UIColor(red: 246/255, green: 246/255, blue: 247/255, alpha: 1)
     }
     private let petMedia: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = UIConstants.petMediaCollectionViewCellcornerRadius
         view.clipsToBounds = true
+        view.backgroundColor = UIConstants.petMediaCollectionBackColor
         return view
     }()
     // MARK: - Init
@@ -39,6 +39,6 @@ private extension PetMediaCollectionViewCell {
             make.top.equalToSuperview()
             make.width.equalToSuperview()
             make.height.equalToSuperview()
-        }      
+        }
     }
 }

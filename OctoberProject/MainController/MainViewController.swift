@@ -9,66 +9,103 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController, UITabBarControllerDelegate {
-    var collectionView: UICollectionView!
-    var personPhoto: UIImageView!
-    var petPhoto: UIImageView!
     private enum UIConstants {
         static let backColor = UIColor(red: 250/255, green: 250/255, blue: 252/255, alpha: 1)
     }
-    private let items: [PostItem] = [
-        PostItem(type: .MainTopCell),
-        PostItem(type: .MainPetInfoCell)
+    private let tableView = UITableView()
+    private let items: [PostItemType] = [
+        .mainHeaderCell(MainHeaderCellStruct(
+            personPhoto: UIImage(named: "person")!,
+            petPhoto: UIImage(named: "pet")!,
+            names: "Никита и Арчи", 
+            onlineIndicator: true,
+            timeForAWalkLabel: "На прогулке еще 15 минут",
+            settingsButton: true,
+            dialogButton: true)),
+        .mainPersonInfoCell(MainPersonInfoCellStruct(
+            personData: "Нажмите, чтобы редактировать")),
+        .mainPetInfoCell(MainPetInfoCellStruct(
+            petPhoto: UIImage(named: "pet")!,
+            petName: "Арчи", 
+            petGender: "genderMale",
+            petLocation: "Алтайский край, Барнаул",
+            petData: "Нажмите, чтобы редактировать"))
     ]
-    
+    //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.delegate = self
-        view.backgroundColor = UIConstants.backColor
         initialize()
     }
-//MARK: - настройка collectionView
+}
+private extension MainViewController {
     func initialize() {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(MainTopCell.self, forCellWithReuseIdentifier: "MainTopCell")
-        collectionView.register(MainPetInfoCell.self, forCellWithReuseIdentifier: "MainPetInfoCell")
-        collectionView.backgroundColor = UIConstants.backColor
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.contentInsetAdjustmentBehavior = .never
-        view.addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(MainHeaderCell.self, forCellReuseIdentifier: String(describing: MainHeaderCell.self))
+        tableView.register(MainPersonInfoCell.self, forCellReuseIdentifier: String(describing: MainPersonInfoCell.self))
+        tableView.backgroundColor = UIConstants.backColor
+        tableView.register(MainPetInfoCell.self, forCellReuseIdentifier: String(describing: MainPetInfoCell.self))
+        let heightTabBar = round(view.frame.height / 10)
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
-            make.bottom.equalToSuperview().inset(93)
+            make.bottom.equalToSuperview().inset(heightTabBar)
         }
     }
 }
-// MARK: - UICollectionViewDataSource
-extension MainViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+//MARK: UITableViewDelegate
+extension MainViewController: UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        3
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = items[indexPath.row]
-        switch item.type {
-        case .MainTopCell:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainTopCell", for: indexPath) as! MainTopCell
-            cell.configure()
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0: return ""
+        case 1: return " "
+        case 2: return " "
+        default: return nil
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        0
+    }
+}
+//MARK: UITableViewDataSource
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = items[indexPath.section]
+        switch item {
+        case .mainHeaderCell(let info):
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainHeaderCell.self), for: indexPath) as! MainHeaderCell
+            _ = indexPath.section
+            cell.configure(with: info)
+            cell.delegate = self
             return cell
-        case .MainPetInfoCell:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPetInfoCell", for: indexPath) as! MainPetInfoCell
-            cell.configure()
+        case .mainPersonInfoCell(let info):
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainPersonInfoCell.self), for: indexPath) as! MainPersonInfoCell
+            _ = indexPath.section
+            cell.configure(with: info)
+            return cell
+        case .mainPetInfoCell(let info):
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainPetInfoCell.self), for: indexPath) as! MainPetInfoCell
+            _ = indexPath.section
+            cell.configure(with: info)
             return cell
         }
     }
 }
-// MARK: - UICollectionViewDelegateFlowLayout
-extension MainViewController: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width
-        let height: CGFloat = width
-        return CGSize(width: width, height: height)
+extension MainViewController: MainHeaderCellDelegate {
+    func settingsDidTab(){
+        print("tapSettings")
     }
 }
+
+
+
