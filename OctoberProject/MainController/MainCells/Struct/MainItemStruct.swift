@@ -7,9 +7,6 @@
 
 import Foundation
 import UIKit
-//struct PostItem {
-//    let type: PostItemType
-//}
 
 enum PostItemType {
     case mainHeaderCell(MainHeaderCellStruct)

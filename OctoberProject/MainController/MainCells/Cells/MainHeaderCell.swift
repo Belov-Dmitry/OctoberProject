@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol MainHeaderCellDelegate: AnyObject {
-    func settingsDidTab()
+    func settingsDidTap()
 }
 class MainHeaderCell: UITableViewCell {
 
@@ -107,10 +107,10 @@ class MainHeaderCell: UITableViewCell {
             petPhoto.image = info.petPhoto
             personAndPetNameLabel.text = info.names
             timeForAWalkLabel.text = info.timeForAWalkLabel
-            settingsButton.addTarget(self, action: #selector(settingsDidTab), for: .touchUpInside)
+            settingsButton.addTarget(self, action: #selector(settingsDidTap), for: .touchUpInside)
         }
-        @objc private func settingsDidTab() {
-            delegate?.settingsDidTab()
+        @objc private func settingsDidTap() {
+            delegate?.settingsDidTap()
         }
     
 }

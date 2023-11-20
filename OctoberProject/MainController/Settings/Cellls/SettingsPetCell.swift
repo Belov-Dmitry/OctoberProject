@@ -19,5 +19,7 @@ class SettingsPetCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    func configure(with info: SettingsPetCellStruct) {
+        
+    }
 }

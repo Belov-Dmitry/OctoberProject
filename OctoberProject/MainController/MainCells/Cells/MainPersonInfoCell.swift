@@ -7,7 +7,11 @@
 import UIKit
 import SnapKit
 
+protocol MainPersonInfoCellDelegate: AnyObject {
+    func personInfoViewLabelTap()
+}
 class MainPersonInfoCell: UITableViewCell {
+    weak var delegate: MainPersonInfoCellDelegate?
     private enum UIConstants {
         static let personInfoTitleLabelFontSize: CGFloat = 13
         static let personInfoLabelFontSize: CGFloat = 16
@@ -66,11 +70,16 @@ class MainPersonInfoCell: UITableViewCell {
                     make.top.equalToSuperview().offset(20)
                     make.size.equalTo(UIConstants.personInfoEditButtonImageSize)
                 }
+                let personInfoEditButtonImageTap = UITapGestureRecognizer(target: self, action: #selector(self.personInfoViewLabelTap(_:)))
+                self.personInfoEditButtonImage.isUserInteractionEnabled = true
+                self.personInfoEditButtonImage.addGestureRecognizer(personInfoEditButtonImageTap)
                 print("1")
             }
         }
         @objc func personInfoViewLabelTap(_ sender: UITapGestureRecognizer) {
             print("label pressed personInfo")
+            delegate?.personInfoViewLabelTap()
+            
         }
     }
     // MARK: - Private methods

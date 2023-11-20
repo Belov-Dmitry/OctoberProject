@@ -13,7 +13,7 @@ class MainViewController: UIViewController, UITabBarControllerDelegate {
         static let backColor = UIColor(red: 250/255, green: 250/255, blue: 252/255, alpha: 1)
     }
     private let tableView = UITableView()
-    private let items: [PostItemType] = [
+    var items: [PostItemType] = [
         .mainHeaderCell(MainHeaderCellStruct(
             personPhoto: UIImage(named: "person")!,
             petPhoto: UIImage(named: "pet")!,
@@ -23,13 +23,13 @@ class MainViewController: UIViewController, UITabBarControllerDelegate {
             settingsButton: true,
             dialogButton: true)),
         .mainPersonInfoCell(MainPersonInfoCellStruct(
-            personData: "Нажмите, чтобы редактировать")),
+            personData: "Нажмите, чтобы редактироватьНажмите, чтобы редактироватьНажмите, чтобы редактироватьНажмите, чтобы редактировать")),
         .mainPetInfoCell(MainPetInfoCellStruct(
             petPhoto: UIImage(named: "pet")!,
             petName: "Арчи", 
             petGender: "genderMale",
             petLocation: "Алтайский край, Барнаул",
-            petData: "Нажмите, чтобы редактировать"))
+            petData: "Нажмите, чтобы редактироватьНажмите, чтобы редактироватьНажмите, чтобы редактироватьНажмите, чтобы редактировать"))
     ]
     //MARK: - View lifecycle
     override func viewDidLoad() {
@@ -37,6 +37,15 @@ class MainViewController: UIViewController, UITabBarControllerDelegate {
         tabBarController?.delegate = self
         initialize()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+              self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+         super.viewWillDisappear(animated)
+    }
+    
 }
 private extension MainViewController {
     func initialize() {
@@ -84,28 +93,59 @@ extension MainViewController: UITableViewDataSource {
         switch item {
         case .mainHeaderCell(let info):
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainHeaderCell.self), for: indexPath) as! MainHeaderCell
-            _ = indexPath.section
+            //_ = indexPath.section
             cell.configure(with: info)
             cell.delegate = self
             return cell
         case .mainPersonInfoCell(let info):
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainPersonInfoCell.self), for: indexPath) as! MainPersonInfoCell
-            _ = indexPath.section
+            //_ = indexPath.section
             cell.configure(with: info)
+            cell.delegate = self
             return cell
         case .mainPetInfoCell(let info):
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainPetInfoCell.self), for: indexPath) as! MainPetInfoCell
-            _ = indexPath.section
+            //_ = indexPath.section
             cell.configure(with: info)
+            cell.delegate = self
             return cell
         }
     }
 }
 extension MainViewController: MainHeaderCellDelegate {
-    func settingsDidTab(){
+    func settingsDidTap(){
+        let vc = SettingsViewController()
+        //vc.modalPresentationStyle = .pageSheet
+//        self.navigationController?.modalPresentationStyle = .popover
+//        self.navigationController?.pushViewController(vc, animated: true)
+        //present(vc, animated: true)
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .pageSheet
+        present(navigationController, animated: true)
+        
+        
+        
+        
         print("tapSettings")
     }
 }
-
-
+extension MainViewController: MainPersonInfoCellDelegate {
+    func personInfoViewLabelTap() {
+        print(#function)
+        let vc = PersonDataEditViewController()
+        //vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
+        //present(vc, animated: true)
+    }
+}
+extension MainViewController: MainPetInfoCellDelegate {
+    func petInfoViewLabelTap() {
+        print(#function)
+        let vc = PetDataEditViewController()
+        //vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
+        //present(vc, animated: true)
+    }
+    
+}
 

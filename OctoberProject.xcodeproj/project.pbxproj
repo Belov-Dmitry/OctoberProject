@@ -18,14 +18,22 @@
 		F4ABA4DE2ACF04F30096A6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4ABA4DD2ACF04F30096A6DA /* Assets.xcassets */; };
 		F4ABA4E12ACF04F30096A6DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4ABA4DF2ACF04F30096A6DA /* LaunchScreen.storyboard */; };
 		F4E5AE072AD470A900699CF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5AE062AD470A900699CF7 /* MainViewController.swift */; };
-		F4E5AE0A2AD47C5F00699CF7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4E5AE092AD47C5F00699CF7 /* SnapKit */; };
-		F4E5AE0C2AD47C6000699CF7 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F4E5AE0B2AD47C6000699CF7 /* SnapKit-Dynamic */; };
 		F4E8EE9B2AF2E05700637911 /* MainItemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EE9A2AF2E05700637911 /* MainItemStruct.swift */; };
 		F4E8EE9D2AF2E15F00637911 /* MainHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EE9C2AF2E15F00637911 /* MainHeaderCell.swift */; };
 		F4E8EE9F2AF2E1DF00637911 /* MainPersonInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EE9E2AF2E1DF00637911 /* MainPersonInfoCell.swift */; };
 		F4E8EEA12AF2E20F00637911 /* MainPetInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EEA02AF2E20F00637911 /* MainPetInfoCell.swift */; };
 		F4E8EEA32AF2E32100637911 /* PetMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EEA22AF2E32100637911 /* PetMediaCollectionViewCell.swift */; };
 		F4E8EEA52AF2E38700637911 /* PetLoadMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EEA42AF2E38700637911 /* PetLoadMediaCollectionViewCell.swift */; };
+		F4E8EEB02B0011ED00637911 /* PersonDataEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EEAF2B0011ED00637911 /* PersonDataEditViewController.swift */; };
+		F4E8EEB82B0299D800637911 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4E8EEB72B0299D800637911 /* SnapKit */; };
+		F4E8EEBA2B0299D800637911 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F4E8EEB92B0299D800637911 /* SnapKit-Dynamic */; };
+		F4E8EEBC2B03E8CD00637911 /* PetDataEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EEBB2B03E8CD00637911 /* PetDataEditViewController.swift */; };
+		F4E8EEBF2B0A2D3800637911 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EEBE2B0A2D3800637911 /* SettingsViewController.swift */; };
+		F4E8EEC22B0A664200637911 /* SettingsTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EEC12B0A664200637911 /* SettingsTopCell.swift */; };
+		F4E8EEC42B0A666800637911 /* SettingsPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EEC32B0A666800637911 /* SettingsPersonCell.swift */; };
+		F4E8EEC62B0A667C00637911 /* SettingsPetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EEC52B0A667C00637911 /* SettingsPetCell.swift */; };
+		F4E8EEC92B0A68A500637911 /* SettingsModelStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EEC82B0A68A500637911 /* SettingsModelStruct.swift */; };
+		F4E8EECC2B0A814B00637911 /* SettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EECB2B0A814B00637911 /* SettingsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +56,14 @@
 		F4E8EEA02AF2E20F00637911 /* MainPetInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPetInfoCell.swift; sourceTree = "<group>"; };
 		F4E8EEA22AF2E32100637911 /* PetMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetMediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4E8EEA42AF2E38700637911 /* PetLoadMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetLoadMediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4E8EEAF2B0011ED00637911 /* PersonDataEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataEditViewController.swift; sourceTree = "<group>"; };
+		F4E8EEBB2B03E8CD00637911 /* PetDataEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDataEditViewController.swift; sourceTree = "<group>"; };
+		F4E8EEBE2B0A2D3800637911 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F4E8EEC12B0A664200637911 /* SettingsTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTopCell.swift; sourceTree = "<group>"; };
+		F4E8EEC32B0A666800637911 /* SettingsPersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPersonCell.swift; sourceTree = "<group>"; };
+		F4E8EEC52B0A667C00637911 /* SettingsPetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPetCell.swift; sourceTree = "<group>"; };
+		F4E8EEC82B0A68A500637911 /* SettingsModelStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelStruct.swift; sourceTree = "<group>"; };
+		F4E8EECB2B0A814B00637911 /* SettingsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4E5AE0A2AD47C5F00699CF7 /* SnapKit in Frameworks */,
-				F4E5AE0C2AD47C6000699CF7 /* SnapKit-Dynamic in Frameworks */,
+				F4E8EEB82B0299D800637911 /* SnapKit in Frameworks */,
+				F4E8EEBA2B0299D800637911 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +101,8 @@
 			children = (
 				F4740B862AE707020055424C /* Cells */,
 				F4740B852AE706BD0055424C /* Struct */,
+				F4E8EEAF2B0011ED00637911 /* PersonDataEditViewController.swift */,
+				F4E8EEBB2B03E8CD00637911 /* PetDataEditViewController.swift */,
 			);
 			path = MainCells;
 			sourceTree = "<group>";
@@ -170,10 +188,48 @@
 		F4E5AE052AD4705E00699CF7 /* MainController */ = {
 			isa = PBXGroup;
 			children = (
+				F4E8EEBD2B0A2D0500637911 /* Settings */,
 				F45D57022ADDCA720013BE44 /* MainCells */,
 				F4E5AE062AD470A900699CF7 /* MainViewController.swift */,
 			);
 			path = MainController;
+			sourceTree = "<group>";
+		};
+		F4E8EEBD2B0A2D0500637911 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8EEC72B0A682E00637911 /* Struct */,
+				F4E8EEC02B0A65DE00637911 /* Cellls */,
+				F4E8EEBE2B0A2D3800637911 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F4E8EEC02B0A65DE00637911 /* Cellls */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8EECA2B0A7F9F00637911 /* SettingsTopCells */,
+				F4E8EEC12B0A664200637911 /* SettingsTopCell.swift */,
+				F4E8EEC32B0A666800637911 /* SettingsPersonCell.swift */,
+				F4E8EEC52B0A667C00637911 /* SettingsPetCell.swift */,
+			);
+			path = Cellls;
+			sourceTree = "<group>";
+		};
+		F4E8EEC72B0A682E00637911 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8EEC82B0A68A500637911 /* SettingsModelStruct.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
+		F4E8EECA2B0A7F9F00637911 /* SettingsTopCells */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8EECB2B0A814B00637911 /* SettingsCollectionViewCell.swift */,
+			);
+			path = SettingsTopCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +249,8 @@
 			);
 			name = OctoberProject;
 			packageProductDependencies = (
-				F4E5AE092AD47C5F00699CF7 /* SnapKit */,
-				F4E5AE0B2AD47C6000699CF7 /* SnapKit-Dynamic */,
+				F4E8EEB72B0299D800637911 /* SnapKit */,
+				F4E8EEB92B0299D800637911 /* SnapKit-Dynamic */,
 			);
 			productName = OctoberProject;
 			productReference = F4ABA4D12ACF04F20096A6DA /* OctoberProject.app */;
@@ -225,7 +281,7 @@
 			);
 			mainGroup = F4ABA4C82ACF04F20096A6DA;
 			packageReferences = (
-				F4E5AE082AD47C5F00699CF7 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F4E8EEB62B0299D800637911 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = F4ABA4D22ACF04F20096A6DA /* Products */;
 			projectDirPath = "";
@@ -257,8 +313,12 @@
 				F4E8EEA12AF2E20F00637911 /* MainPetInfoCell.swift in Sources */,
 				F4ABA4D92ACF04F20096A6DA /* MessageViewController.swift in Sources */,
 				DCCBF1022AD34D0D0051D97B /* Resources.swift in Sources */,
+				F4E8EEBC2B03E8CD00637911 /* PetDataEditViewController.swift in Sources */,
+				F4E8EEC92B0A68A500637911 /* SettingsModelStruct.swift in Sources */,
+				F4E8EEC22B0A664200637911 /* SettingsTopCell.swift in Sources */,
 				F4E8EEA52AF2E38700637911 /* PetLoadMediaCollectionViewCell.swift in Sources */,
 				DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */,
+				F4E8EEC62B0A667C00637911 /* SettingsPetCell.swift in Sources */,
 				F4E8EE9B2AF2E05700637911 /* MainItemStruct.swift in Sources */,
 				DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */,
 				F4E8EE9D2AF2E15F00637911 /* MainHeaderCell.swift in Sources */,
@@ -266,8 +326,12 @@
 				F4E5AE072AD470A900699CF7 /* MainViewController.swift in Sources */,
 				DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */,
 				F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */,
+				F4E8EEC42B0A666800637911 /* SettingsPersonCell.swift in Sources */,
 				F4E8EEA32AF2E32100637911 /* PetMediaCollectionViewCell.swift in Sources */,
 				F4E8EE9F2AF2E1DF00637911 /* MainPersonInfoCell.swift in Sources */,
+				F4E8EEB02B0011ED00637911 /* PersonDataEditViewController.swift in Sources */,
+				F4E8EECC2B0A814B00637911 /* SettingsCollectionViewCell.swift in Sources */,
+				F4E8EEBF2B0A2D3800637911 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +554,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F4E5AE082AD47C5F00699CF7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		F4E8EEB62B0299D800637911 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -501,14 +565,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F4E5AE092AD47C5F00699CF7 /* SnapKit */ = {
+		F4E8EEB72B0299D800637911 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F4E5AE082AD47C5F00699CF7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = F4E8EEB62B0299D800637911 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		F4E5AE0B2AD47C6000699CF7 /* SnapKit-Dynamic */ = {
+		F4E8EEB92B0299D800637911 /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F4E5AE082AD47C5F00699CF7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = F4E8EEB62B0299D800637911 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -29,9 +29,9 @@ private extension TabBarController {
     
     func getControllers(for tab: Tab) -> UIViewController {
         switch tab {
-        case .profile: MainViewController()
+        //case .profile: MainViewController()
 // закоментировал navigation т.к. он мешал верхней ячейке
-//        case .profile: UINavigationController(rootViewController: MainViewController())
+        case .profile: UINavigationController(rootViewController: MainViewController())
         case .map: MapViewController()
         case .message: MessageViewController()
         }

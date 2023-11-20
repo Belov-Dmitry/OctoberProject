@@ -7,7 +7,12 @@
 import UIKit
 import SnapKit
 
+protocol MainPetInfoCellDelegate: AnyObject {
+    func petInfoViewLabelTap()
+}
+
 class MainPetInfoCell: UITableViewCell {
+    weak var delegate: MainPetInfoCellDelegate?
     private enum UIConstants {
         static let petImageSize: CGFloat = 80
         static let petNameLabelFontSize: CGFloat = 22
@@ -61,7 +66,7 @@ class MainPetInfoCell: UITableViewCell {
         label.font = .systemFont(ofSize: UIConstants.petInfoViewLabelFontSize)
         return label
     }()
-    private let petPencilImage: UIImageView = {
+    private let petInfoEditButtonImage: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "editButton")
         return view
@@ -106,17 +111,21 @@ class MainPetInfoCell: UITableViewCell {
                 petInfoViewLabel.textColor = UIConstants.textGreyColor
                 petInfoViewLabel.numberOfLines = 5
                 
-                contentView.addSubview(petPencilImage)
-                petPencilImage.snp.makeConstraints{ make in
+                contentView.addSubview(petInfoEditButtonImage)
+                petInfoEditButtonImage.snp.makeConstraints{ make in
                     make.trailing.equalToSuperview().inset(20)
                     make.top.equalToSuperview().offset(20)
                     make.size.equalTo(UIConstants.petPencilImageSize)
                 }
+                let petInfoEditButtonImageTap = UITapGestureRecognizer(target: self, action: #selector(self.petInfoViewLabelTap(_:)))
+                self.petInfoEditButtonImage.isUserInteractionEnabled = true
+                self.petInfoEditButtonImage.addGestureRecognizer(petInfoEditButtonImageTap)
                 print("2")
             }
         }
     @objc func petInfoViewLabelTap(_ sender: UITapGestureRecognizer) {
         print("label pressed petInfo")
+        delegate?.petInfoViewLabelTap()
     }
     
   
