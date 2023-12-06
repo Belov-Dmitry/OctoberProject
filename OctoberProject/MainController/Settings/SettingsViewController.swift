@@ -19,18 +19,18 @@ class SettingsViewController: UIViewController {
             SettingsTopCellStruct(
                 foto: UIImage(named: "person")!,
                 name: "Никита",
-                isAddButtonVisible: true,
-                isSelectedCell: true),
+                isAddButtonVisible: false,
+                isSelectedCell: false),
             SettingsTopCellStruct(
                 foto: UIImage(named: "pet")!,
                 name: "Арчи",
-                isAddButtonVisible: true,
-                isSelectedCell: true),
+                isAddButtonVisible: false,
+                isSelectedCell: false),
             SettingsTopCellStruct(
                 foto: UIImage(named: "AddPetAvatar")!,
                 name: "Добавить",
                 isAddButtonVisible: true,
-                isSelectedCell: true),]),
+                isSelectedCell: false),]),
         .settingsPersonCell(SettingsPersonCellStruct(
             personPhoto: UIImage(named: "person")!,
             personPhone: "+79339333333",
@@ -51,7 +51,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        view.backgroundColor = .lightPink
+        view.backgroundColor = UIConstants.backColor
     }
     
     @objc func goBackToMainFromSettings() {

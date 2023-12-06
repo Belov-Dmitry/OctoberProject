@@ -17,7 +17,8 @@ class MainViewController: UIViewController, UITabBarControllerDelegate {
         .mainHeaderCell(MainHeaderCellStruct(
             personPhoto: UIImage(named: "person")!,
             petPhoto: UIImage(named: "pet")!,
-            names: "Никита и Арчи", 
+            personName: "Никита",
+            petName: "Арчи",
             onlineIndicator: true,
             timeForAWalkLabel: "На прогулке еще 15 минут",
             settingsButton: true,
@@ -122,10 +123,6 @@ extension MainViewController: MainHeaderCellDelegate {
         let navigationController = UINavigationController(rootViewController: vc)
         navigationController.modalPresentationStyle = .pageSheet
         present(navigationController, animated: true)
-        
-        
-        
-        
         print("tapSettings")
     }
 }

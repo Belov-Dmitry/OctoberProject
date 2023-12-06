@@ -105,17 +105,14 @@ class MainHeaderCell: UITableViewCell {
         func configure(with info: MainHeaderCellStruct) {
             personPhoto.image = info.personPhoto
             petPhoto.image = info.petPhoto
-            personAndPetNameLabel.text = info.names
+            personAndPetNameLabel.text = "\(info.personName) и \(info.petName)"
             timeForAWalkLabel.text = info.timeForAWalkLabel
             settingsButton.addTarget(self, action: #selector(settingsDidTap), for: .touchUpInside)
         }
         @objc private func settingsDidTap() {
             delegate?.settingsDidTap()
         }
-    
 }
-
-
 private extension MainHeaderCell {
     func initialize() {
         selectionStyle = .none

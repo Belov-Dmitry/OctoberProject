@@ -19,7 +19,7 @@ struct SettingsTopCellStruct {
     let foto: UIImage
     let name: String
     let isAddButtonVisible: Bool
-    let isSelectedCell: Bool
+    var isSelectedCell: Bool
 }
 struct SettingsPersonCellStruct {
     let personPhoto: UIImage

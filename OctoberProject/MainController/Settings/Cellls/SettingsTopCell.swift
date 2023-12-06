@@ -18,13 +18,7 @@ class SettingsTopCell: UITableViewCell {
     // MARK: - Private properties
     private var collectionView: UICollectionView!
     private var items: SettingsTopCellItemsType = []
-    //MARK: - Private properties
     
-    // MARK: - Public
-    func configure(with info: SettingsTopCellItemsType) {
-        self.items = info
-        collectionView.reloadData()
-    }
     
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -33,6 +27,11 @@ class SettingsTopCell: UITableViewCell {
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with info: SettingsTopCellItemsType) {
+        self.items = info
+        collectionView.reloadData()
     }
 }
 
@@ -56,7 +55,6 @@ private extension SettingsTopCell {
         }
     }
 }
-
 // MARK: - UICollectionViewDataSource
 extension SettingsTopCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -69,7 +67,27 @@ extension SettingsTopCell: UICollectionViewDataSource {
         return cell
     }
 }
-
+// MARK: - UICollectionViewDelegate
+extension SettingsTopCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        print(items[indexPath.row].name)
+        print(items[indexPath.item].isAddButtonVisible)
+        
+        if items[indexPath.item].isAddButtonVisible {
+            print("показать экран добавления питомца")
+        }
+        
+        items.indices.forEach { index in
+            items[index].isSelectedCell = false
+        }
+        
+        items[indexPath.item].isSelectedCell = true
+        collectionView.reloadData()
+        
+        
+    }
+}
 // MARK: - UICollectionViewDelegateFlowLayout
 extension SettingsTopCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -19,24 +19,23 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         private var logoImageView: UIImageView = {
             let view = UIImageView()
             view.layer.cornerRadius = UIConstants.logoImageViewSize / 2
-            view.clipsToBounds = true //чтобы сработало закругление для картинки
+            view.clipsToBounds = true
             return view
         }()
         
         private let logoNameLabel: UILabel = {
            let label = UILabel()
             label.font = .systemFont(ofSize: UIConstants.logoNameLabelFontSize)
-            label.textAlignment = .center //расположение текста по центру
+            label.textAlignment = .center
             return label
         }()
-        
         private let circleImageView: UIImageView = {
             let view = UIImageView()
-//            view.layer.cornerRadius = UIConstants.circleSize / 2
-//            view.clipsToBounds = true
             view.image = UIImage(named: "isSelectedImage")
             return view
         }()
+    private var isAddButtonVisible: Bool = false
+    
     //MARK: - Init
         override init(frame: CGRect) {
             super.init(frame: frame)
@@ -50,6 +49,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         logoImageView.image = info.foto
         logoNameLabel.text = info.name
         circleImageView.isHidden = !info.isSelectedCell
+        isAddButtonVisible = info.isAddButtonVisible
     }
 }
 //MARK: - Private methods

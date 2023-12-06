@@ -190,6 +190,7 @@ private extension MainPetInfoCell {
         contentView.addSubview(petMediaCollectionView)
         petMediaCollectionView.snp.makeConstraints { make in
             make.top.equalTo(petInfoViewLabel.snp.bottom).offset(20)
+            make.leading.equalToSuperview()
             make.height.equalTo(UIConstants.petMediaCollectionViewCellSize)
             make.width.equalToSuperview()
             make.bottom.equalToSuperview().inset(20)

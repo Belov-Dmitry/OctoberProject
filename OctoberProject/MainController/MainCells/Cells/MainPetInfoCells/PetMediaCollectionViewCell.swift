@@ -36,9 +36,7 @@ private extension PetMediaCollectionViewCell {
     func initialize(){
         contentView.addSubview(petMedia)
         petMedia.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.width.equalToSuperview()
-            make.height.equalToSuperview()
+            make.top.leading.trailing.bottom.equalToSuperview()
         }
     }
 }

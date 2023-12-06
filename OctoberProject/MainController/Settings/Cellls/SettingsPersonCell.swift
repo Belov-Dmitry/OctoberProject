@@ -20,7 +20,6 @@ class SettingsPersonCell: UITableViewCell {
         static let genderHeight: CGFloat = 46
         static let fieldImageViewHeight: CGFloat = 60
     }
-    
     private let backgroundImageView: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = 15
@@ -54,28 +53,35 @@ class SettingsPersonCell: UITableViewCell {
         button.setTitle("Загрузить фото", for: .normal)
         //        button.tintColor = .black
         button.backgroundColor = UIConstants.backColor
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         return button
     }()
     private let manGenderButton: UIButton = {
-        let button = UIButton(type: .system)
+        var config = UIButton.Configuration.plain()
+        config.imagePadding = 10
+        config.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: -20, bottom: 2, trailing: 10)
+        let button = UIButton(configuration: config, primaryAction: nil)
         button.layer.cornerRadius = UIConstants.genderHeight / 2
         button.clipsToBounds = true
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.systemGray5.cgColor
-        button.setTitle("   Мужчина", for: .normal)
+        button.setTitle("Мужчина", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.setImage(UIImage(named: "NoActiveMale"), for: .normal)
+        button.setImage(UIImage(named: "ActiveMale"), for: .normal)
         return button
     }()
     private let womanGenderButton: UIButton = {
-        let button = UIButton(type: .system)
+        var config = UIButton.Configuration.plain()
+        config.imagePadding = 10
+        config.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: -20, bottom: 2, trailing: 10)
+        let button = UIButton(configuration: config, primaryAction: nil)
         button.layer.cornerRadius = UIConstants.genderHeight / 2
         button.clipsToBounds = true
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.systemGray5.cgColor
-        button.setTitle("   Женщина", for: .normal)
+        button.setTitle("Женщина", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.setImage(UIImage(named: "NoActiveFemale"), for: .normal)
+        button.setImage(UIImage(named: "ActiveFemale"), for: .normal)
         button.tintColor = .systemPink
         return button
     }()
@@ -95,11 +101,11 @@ class SettingsPersonCell: UITableViewCell {
         label.text = "Имя"
         return label
     }()
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .black
-        return label
+    private var nameTextField: UITextField = {
+        var text = UITextField()
+        text.font = .systemFont(ofSize: 16)
+        text.placeholder = "Имя"
+        return text
     }()
     private let locationFieldImageView: UIImageView = {
         let view = UIImageView()
@@ -117,11 +123,19 @@ class SettingsPersonCell: UITableViewCell {
         label.text = "Местоположение"
         return label
     }()
-    private let locationLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .black
-        return label
+    private let locationTextField: UITextField = {
+        var text = UITextField()
+        text.font = .systemFont(ofSize: 16)
+        text.placeholder = "Местоположение"
+        return text
+    }()
+    private let locationMarkerMap: UIImageView = {
+        let view = UIImageView()
+        view.layer.cornerRadius = 17
+        view.clipsToBounds = true
+        view.backgroundColor = .white
+        view.image = UIImage(named: "markerMap")
+        return view
     }()
     private let emailFieldImageView: UIImageView = {
         let view = UIImageView()
@@ -139,11 +153,11 @@ class SettingsPersonCell: UITableViewCell {
         label.text = "E-mail"
         return label
     }()
-    private let emailLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .black
-        return label
+    private let emailTextField: UITextField = {
+        var text = UITextField()
+        text.font = .systemFont(ofSize: 16)
+        text.placeholder = "E-mail"
+        return text
     }()
     private let changePassImageView: UIImageView = {
         let view = UIImageView()
@@ -175,12 +189,17 @@ class SettingsPersonCell: UITableViewCell {
         label.text = "Текущий пароль"
         return label
     }()
-    private let currentPassLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .black
-        label.text = "Текущий пароль"
-        return label
+    private let currentPassTextField: UITextField = {
+        var text = UITextField()
+        text.font = .systemFont(ofSize: 16)
+        text.placeholder = "Текущий пароль"
+        text.isSecureTextEntry = true
+        return text
+    }()
+    private let currentPassEyeIconButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "CloseEye"), for: .normal)
+        return button
     }()
     private let newPassImageView: UIImageView = {
         let view = UIImageView()
@@ -198,12 +217,17 @@ class SettingsPersonCell: UITableViewCell {
         label.text = "Новый пароль"
         return label
     }()
-    private let newPassLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .black
-        label.text = "Новый пароль"
-        return label
+    private let newPassTextField: UITextField = {
+        var text = UITextField()
+        text.font = .systemFont(ofSize: 16)
+        text.placeholder = "Новый пароль"
+        text.isSecureTextEntry = true
+        return text
+    }()
+    private let newPassEyeIconButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "CloseEye"), for: .normal)
+        return button
     }()
     private let repitNewPassImageView: UIImageView = {
         let view = UIImageView()
@@ -221,12 +245,17 @@ class SettingsPersonCell: UITableViewCell {
         label.text = "Повторить новый пароль"
         return label
     }()
-    private let repitNewPassLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .black
-        label.text = "Повторить новый пароль"
-        return label
+    private let repitNewPassTextField: UITextField = {
+        var text = UITextField()
+        text.font = .systemFont(ofSize: 16)
+        text.placeholder = "Повторить новый пароль"
+        text.isSecureTextEntry = true
+        return text
+    }()
+    private let repitPassEyeIconButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "CloseEye"), for: .normal)
+        return button
     }()
     private let cancellButton: UIButton = {
         let button = UIButton(type: .system)
@@ -285,23 +314,71 @@ class SettingsPersonCell: UITableViewCell {
         phoneLabel.text = info.personPhone
         manGenderButton.addTarget(self, action: #selector(manGenderButtonPressed), for: .touchUpInside)
         womanGenderButton.addTarget(self, action: #selector(womanGenderButtonPressed), for: .touchUpInside)
-        nameLabel.text = info.personName
-        locationLabel.text = info.personLocation
-        emailLabel.text = info.personMail
-        
+        nameTextField.text = info.personName
+        locationTextField.text = info.personLocation
+        emailTextField.text = info.personMail
+        manGenderButtonPressed()
+        currentPassEyeIconButton.addTarget(self, action: #selector(currentPassEyeIconViewPressed), for: .touchUpInside)
+        newPassEyeIconButton.addTarget(self, action: #selector(newPassEyeIconButtonPressed), for: .touchUpInside)
+        repitPassEyeIconButton.addTarget(self, action: #selector(repitPassEyeIconButtonPressed), for: .touchUpInside)
+                
     }
     @objc func manGenderButtonPressed() {
         manGenderButton.backgroundColor = UIColor.systemBlue
         manGenderButton.tintColor = .white
+        manGenderButton.setImage(UIImage(named: "ActiveMale"), for: .normal)
         womanGenderButton.backgroundColor = UIColor.clear
         womanGenderButton.tintColor = .systemPink
+        womanGenderButton.setImage(UIImage(named: "NoActiveFemale"), for: .normal)
     }
     @objc func womanGenderButtonPressed() {
         womanGenderButton.backgroundColor = UIColor.systemPink
         womanGenderButton.tintColor = .white
+        womanGenderButton.setImage(UIImage(named: "ActiveFemale"), for: .normal)
         manGenderButton.backgroundColor = UIColor.clear
         manGenderButton.tintColor = .systemBlue
+        manGenderButton.setImage(UIImage(named: "NoActiveMale"), for: .normal)
     }
+    @objc func currentPassEyeIconViewPressed() {
+            if currentPassTextField.isSecureTextEntry == true {
+                currentPassTextField.isSecureTextEntry = false
+                currentPassEyeIconButton.setImage(UIImage(named: "Eye"), for: .normal)
+
+            } else {
+                currentPassTextField.isSecureTextEntry = true
+                currentPassEyeIconButton.setImage(UIImage(named: "CloseEye"), for: .normal)
+
+            }
+            print(#function)
+        }
+    @objc func newPassEyeIconButtonPressed() {
+           if newPassTextField.isSecureTextEntry == true {
+               newPassTextField.isSecureTextEntry = false
+               newPassEyeIconButton.setImage(UIImage(named: "Eye"), for: .normal)
+           } else {
+               newPassTextField.isSecureTextEntry = true
+               newPassEyeIconButton.setImage(UIImage(named: "CloseEye"), for: .normal)
+           }
+           print(#function)
+       }
+       @objc func repitPassEyeIconButtonPressed() {
+           if repitNewPassTextField.isSecureTextEntry == true {
+               repitNewPassTextField.isSecureTextEntry = false
+               repitPassEyeIconButton.setImage(UIImage(named: "Eye"), for: .normal)
+           } else {
+               repitNewPassTextField.isSecureTextEntry = true
+               repitPassEyeIconButton.setImage(UIImage(named: "CloseEye"), for: .normal)
+           }
+           print(#function)
+       }
+    
+    
+    
+    
+    
+    
+    
+    
 }
 extension SettingsPersonCell {
     func configureUI(){
@@ -310,100 +387,105 @@ extension SettingsPersonCell {
         contentView.addSubview(backgroundImageView)
         backgroundImageView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
-            //make.bottom.equalTo(emailFieldImageView.snp.bottom).inset(20)
+            make.height.equalTo(533)
         }
-        backgroundImageView.addSubview(personPhotoImageView)
+        contentView.addSubview(personPhotoImageView)
         personPhotoImageView.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().inset(20)
             make.size.equalTo(UIConstants.personPhotoImageSize)
         }
-        backgroundImageView.addSubview(phoneTitleLabel)
+        contentView.addSubview(phoneTitleLabel)
         phoneTitleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(40)
             make.leading.equalTo(personPhotoImageView.snp.trailing).offset(20)
         }
-        backgroundImageView.addSubview(phoneLabel)
+        contentView.addSubview(phoneLabel)
         phoneLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(60)
             make.leading.equalTo(personPhotoImageView.snp.trailing).offset(20)
         }
-        backgroundImageView.addSubview(loadPhotoButton)
+        contentView.addSubview(loadPhotoButton)
         loadPhotoButton.snp.makeConstraints { make in
             make.top.equalTo(personPhotoImageView.snp.bottom).offset(10)
             make.leading.equalToSuperview().inset(40)
         }
-        backgroundImageView.addSubview(manGenderButton)
+        contentView.addSubview(manGenderButton)
         manGenderButton.snp.makeConstraints { make in
             make.top.equalTo(loadPhotoButton.snp.bottom).offset(30)
             make.left.equalToSuperview().inset(20)
             make.width.equalTo((UIScreen.main.bounds.width - 60) / 2)
             make.height.equalTo(UIConstants.genderHeight)
         }
-        backgroundImageView.addSubview(womanGenderButton)
+        contentView.addSubview(womanGenderButton)
         womanGenderButton.snp.makeConstraints { make in
             make.top.equalTo(loadPhotoButton.snp.bottom).offset(30)
             make.right.equalToSuperview().inset(20)
             make.width.equalTo((UIScreen.main.bounds.width - 60) / 2)
             make.height.equalTo(UIConstants.genderHeight)
         }
-        backgroundImageView.addSubview(nameFieldImageView)
+        contentView.addSubview(nameFieldImageView)
         nameFieldImageView.snp.makeConstraints { make in
             make.top.equalTo(womanGenderButton.snp.bottom).offset(30)
             make.right.left.equalToSuperview().inset(20)
             make.height.equalTo(UIConstants.fieldImageViewHeight)
         }
-        nameFieldImageView.addSubview(nameTitleLabel)
+        contentView.addSubview(nameTitleLabel)
         nameTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(11)
-            make.left.equalToSuperview().inset(15)
+            make.top.equalTo(nameFieldImageView).inset(11)
+            make.left.right.equalToSuperview().inset(35)
         }
-        nameFieldImageView.addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(11)
-            make.left.equalToSuperview().inset(15)
+        contentView.addSubview(nameTextField)
+        nameTextField.snp.makeConstraints { make in
+            make.bottom.equalTo(nameFieldImageView).inset(11)
+            make.left.right.equalToSuperview().inset(35)
         }
-        backgroundImageView.addSubview(locationFieldImageView)
+        contentView.addSubview(locationFieldImageView)
         locationFieldImageView.snp.makeConstraints { make in
             make.top.equalTo(nameFieldImageView.snp.bottom).offset(15)
             make.right.left.equalToSuperview().inset(20)
             make.height.equalTo(UIConstants.fieldImageViewHeight)
         }
-        locationFieldImageView.addSubview(locationTitleLabel)
+        contentView.addSubview(locationTitleLabel)
         locationTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(11)
-            make.left.equalToSuperview().inset(15)
+            make.top.equalTo(locationFieldImageView).inset(11)
+            make.left.equalToSuperview().inset(35)
         }
-        locationFieldImageView.addSubview(locationLabel)
-        locationLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(11)
-            make.left.equalToSuperview().inset(15)
+        contentView.addSubview(locationTextField)
+        locationTextField.snp.makeConstraints { make in
+            make.bottom.equalTo(locationFieldImageView).inset(11)
+            make.left.equalToSuperview().inset(35)
+            make.right.equalToSuperview().inset(80)
         }
-        backgroundImageView.addSubview(emailFieldImageView)
+        contentView.addSubview(locationMarkerMap)
+        locationMarkerMap.snp.makeConstraints { make in
+            make.centerY.equalTo(locationFieldImageView)
+            make.right.equalToSuperview().inset(35)
+        }
+        contentView.addSubview(emailFieldImageView)
         emailFieldImageView.snp.makeConstraints { make in
             make.top.equalTo(locationFieldImageView.snp.bottom).offset(15)
             make.right.left.equalToSuperview().inset(20)
             make.height.equalTo(UIConstants.fieldImageViewHeight)
-            make.bottom.equalToSuperview().inset(20)
         }
-        emailFieldImageView.addSubview(emailTitleLabel)
+        contentView.addSubview(emailTitleLabel)
         emailTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(11)
-            make.left.equalToSuperview().inset(15)
+            make.top.equalTo(emailFieldImageView).inset(11)
+            make.left.equalToSuperview().inset(35)
         }
-        emailFieldImageView.addSubview(emailLabel)
-        emailLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(11)
-            make.left.equalToSuperview().inset(15)
+        contentView.addSubview(emailTextField)
+        emailTextField.snp.makeConstraints { make in
+            make.bottom.equalTo(emailFieldImageView).inset(11)
+            make.left.right.equalToSuperview().inset(35)
         }
         contentView.addSubview(changePassImageView)
         changePassImageView.snp.makeConstraints { make in
             make.top.equalTo(emailFieldImageView.snp.bottom).offset(40)
             make.right.left.equalToSuperview()
-            make.height.equalTo(286)
+            make.height.equalTo(296)
         }
-        changePassImageView.addSubview(changePassTitleLabel)
+        contentView.addSubview(changePassTitleLabel)
         changePassTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(20)
+            make.top.equalTo(changePassImageView).inset(20)
             make.left.equalToSuperview().inset(20)
         }
         changePassImageView.addSubview(currentPassImageView)
@@ -417,10 +499,16 @@ extension SettingsPersonCell {
             make.top.equalToSuperview().inset(11)
             make.left.equalToSuperview().inset(15)
         }
-        currentPassImageView.addSubview(currentPassLabel)
-        currentPassLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(11)
-            make.left.equalToSuperview().inset(15)
+        contentView.addSubview(currentPassTextField)
+        currentPassTextField.snp.makeConstraints { make in
+            make.bottom.equalTo(currentPassImageView).inset(11)
+            make.left.equalToSuperview().inset(35)
+            make.right.equalToSuperview().inset(80)
+        }
+        contentView.addSubview(currentPassEyeIconButton)
+        currentPassEyeIconButton.snp.makeConstraints { make in
+            make.centerY.equalTo(currentPassImageView)
+            make.right.equalToSuperview().inset(35)
         }
         changePassImageView.addSubview(newPassImageView)
         newPassImageView.snp.makeConstraints { make in
@@ -433,10 +521,16 @@ extension SettingsPersonCell {
             make.top.equalToSuperview().inset(11)
             make.left.equalToSuperview().inset(15)
         }
-        newPassImageView.addSubview(newPassLabel)
-        newPassLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(11)
-            make.left.equalToSuperview().inset(15)
+        contentView.addSubview(newPassTextField)
+        newPassTextField.snp.makeConstraints { make in
+            make.bottom.equalTo(newPassImageView).inset(11)
+            make.left.equalToSuperview().inset(35)
+            make.right.equalToSuperview().inset(80)
+        }
+        contentView.addSubview(newPassEyeIconButton)
+        newPassEyeIconButton.snp.makeConstraints { make in
+            make.centerY.equalTo(newPassImageView)
+            make.right.equalToSuperview().inset(35)
         }
         changePassImageView.addSubview(repitNewPassImageView)
         repitNewPassImageView.snp.makeConstraints { make in
@@ -449,10 +543,16 @@ extension SettingsPersonCell {
             make.top.equalToSuperview().inset(11)
             make.left.equalToSuperview().inset(15)
         }
-        repitNewPassImageView.addSubview(repitNewPassLabel)
-        repitNewPassLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(11)
-            make.left.equalToSuperview().inset(15)
+        contentView.addSubview(repitNewPassTextField)
+        repitNewPassTextField.snp.makeConstraints { make in
+            make.bottom.equalTo(repitNewPassImageView).inset(11)
+            make.left.equalToSuperview().inset(35)
+            make.right.equalToSuperview().inset(80)
+        }
+        contentView.addSubview(repitPassEyeIconButton)
+        repitPassEyeIconButton.snp.makeConstraints { make in
+            make.centerY.equalTo(repitNewPassImageView)
+            make.right.equalToSuperview().inset(35)
         }
         contentView.addSubview(cancellButton)
         cancellButton.snp.makeConstraints { make in

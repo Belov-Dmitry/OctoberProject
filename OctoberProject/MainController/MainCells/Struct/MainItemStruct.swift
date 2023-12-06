@@ -16,7 +16,8 @@ enum PostItemType {
 struct MainHeaderCellStruct {
     let personPhoto: UIImage
     let petPhoto: UIImage
-    let names: String
+    let personName: String
+    let petName: String
     let onlineIndicator: Bool
     let timeForAWalkLabel: String
     let settingsButton: Bool

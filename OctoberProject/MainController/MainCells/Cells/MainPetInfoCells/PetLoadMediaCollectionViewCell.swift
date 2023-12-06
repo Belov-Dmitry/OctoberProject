@@ -32,7 +32,7 @@ private extension PetLoadMediaCollectionViewCell {
     func initialize(){
         contentView.addSubview(petMedia)
         petMedia.snp.makeConstraints { make in
-            make.top.size.equalToSuperview()
+            make.top.leading.trailing.bottom.equalToSuperview()
         }
         petMedia.image = UIImage(named: "petLoadMedia")
     }
