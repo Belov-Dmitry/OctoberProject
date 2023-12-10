@@ -13,25 +13,8 @@ class MainViewController: UIViewController, UITabBarControllerDelegate {
         static let backColor = UIColor(red: 250/255, green: 250/255, blue: 252/255, alpha: 1)
     }
     private let tableView = UITableView()
-    var items: [PostItemType] = [
-        .mainHeaderCell(MainHeaderCellStruct(
-            personPhoto: UIImage(named: "person")!,
-            petPhoto: UIImage(named: "pet")!,
-            personName: "Никита",
-            petName: "Арчи",
-            onlineIndicator: true,
-            timeForAWalkLabel: "На прогулке еще 15 минут",
-            settingsButton: true,
-            dialogButton: true)),
-        .mainPersonInfoCell(MainPersonInfoCellStruct(
-            personData: "Нажмите, чтобы редактироватьНажмите, чтобы редактироватьНажмите, чтобы редактироватьНажмите, чтобы редактировать")),
-        .mainPetInfoCell(MainPetInfoCellStruct(
-            petPhoto: UIImage(named: "pet")!,
-            petName: "Арчи", 
-            petGender: "genderMale",
-            petLocation: "Алтайский край, Барнаул",
-            petData: "Нажмите, чтобы редактироватьНажмите, чтобы редактироватьНажмите, чтобы редактироватьНажмите, чтобы редактировать"))
-    ]
+    let mainModel = MainModel()
+    
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +73,7 @@ extension MainViewController: UITableViewDataSource {
         1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.section]
+        let item = mainModel.items[indexPath.section]  //items[indexPath.section]
         switch item {
         case .mainHeaderCell(let info):
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainHeaderCell.self), for: indexPath) as! MainHeaderCell
@@ -116,10 +99,6 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: MainHeaderCellDelegate {
     func settingsDidTap(){
         let vc = SettingsViewController()
-        //vc.modalPresentationStyle = .pageSheet
-//        self.navigationController?.modalPresentationStyle = .popover
-//        self.navigationController?.pushViewController(vc, animated: true)
-        //present(vc, animated: true)
         let navigationController = UINavigationController(rootViewController: vc)
         navigationController.modalPresentationStyle = .pageSheet
         present(navigationController, animated: true)

@@ -40,3 +40,21 @@ enum PetMediaCollectionItemsType {
     case petMediaCell
     case petLoadMediaCell
 }
+
+struct CharacterStruct {
+    let personName: String?
+    let personPhoto: UIImage?
+    let personData: String?
+    let personPhone: String?
+    let isPersonMan: Bool?
+    let personMail: String?
+    let currentPass: String?
+    let newPass: String?
+    let location: String?
+    let petName: String?
+    let petPhoto: UIImage?
+    let petBirthday: String?
+    let petData: String?
+    let isPetMan: Bool?
+    let petBreed: String?
+}

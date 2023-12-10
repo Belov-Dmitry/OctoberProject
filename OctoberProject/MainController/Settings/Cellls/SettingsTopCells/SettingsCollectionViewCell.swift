@@ -13,6 +13,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
             static let logoImageViewSize: CGFloat = 80
             static let logoNameLabelFontSize: CGFloat = 13
             static let circleSize: CGFloat = 88
+            static let selectedFontColor = UIColor(red: 29/255, green: 133/255, blue: 255/255, alpha: 1)
         }
     //MARK: - Private properties
     
@@ -34,7 +35,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
             view.image = UIImage(named: "isSelectedImage")
             return view
         }()
-    private var isAddButtonVisible: Bool = false
+    //private var isAddButtonVisible: Bool = false
     
     //MARK: - Init
         override init(frame: CGRect) {
@@ -49,7 +50,10 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         logoImageView.image = info.foto
         logoNameLabel.text = info.name
         circleImageView.isHidden = !info.isSelectedCell
-        isAddButtonVisible = info.isAddButtonVisible
+        //isAddButtonVisible = info.isAddButtonVisible
+        if info.isSelectedCell {logoNameLabel.textColor = UIConstants.selectedFontColor}
+        else {logoNameLabel.textColor = .black}
+        
     }
 }
 //MARK: - Private methods

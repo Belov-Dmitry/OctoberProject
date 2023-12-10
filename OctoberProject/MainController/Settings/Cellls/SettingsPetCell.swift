@@ -199,7 +199,7 @@ class SettingsPetCell: UITableViewCell {
     
     
     func configure(with info: SettingsPetCellStruct) {
-        petPhotoImageView.image = info.petPhoto
+        petPhotoImageView.image = info.petPhoto ?? UIImage(named: "AddPetAvatar")
         
         boyGenderButton.addTarget(self, action: #selector(boyGenderButtonPressed), for: .touchUpInside)
         girlGenderButton.addTarget(self, action: #selector(girlGenderButtonPressed), for: .touchUpInside)
