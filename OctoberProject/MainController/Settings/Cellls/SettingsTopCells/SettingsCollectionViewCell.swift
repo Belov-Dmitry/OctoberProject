@@ -46,12 +46,21 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-    func configure(with info: SettingsTopCellStruct) {
-        logoImageView.image = info.foto
+//    func configure(with info: SettingsTopCellStruct) {
+//        logoImageView.image = info.foto
+//        logoNameLabel.text = info.name
+//        circleImageView.isHidden = !info.isSelectedCell
+//        //isAddButtonVisible = info.isAddButtonVisible
+//        if info.isSelectedCell {logoNameLabel.textColor = UIConstants.selectedFontColor}
+//        else {logoNameLabel.textColor = .black}
+//        
+//    }
+    func configure(with info: TopCollectionViewItem) {
+        logoImageView.image = UIImage(named: info.avatar)
         logoNameLabel.text = info.name
-        circleImageView.isHidden = !info.isSelectedCell
+        circleImageView.isHidden = !(info.isSelectedCell ?? false)
         //isAddButtonVisible = info.isAddButtonVisible
-        if info.isSelectedCell {logoNameLabel.textColor = UIConstants.selectedFontColor}
+        if info.isSelectedCell ?? false {logoNameLabel.textColor = UIConstants.selectedFontColor}
         else {logoNameLabel.textColor = .black}
         
     }

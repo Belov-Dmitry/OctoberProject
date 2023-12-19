@@ -60,12 +60,31 @@ class SettingsViewController: UIViewController {
             petBirthday: nil))
     ]
     
+    var model = MainModel()
+    var charArray:[TopCollectionViewItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         view.backgroundColor = UIConstants.backColor
         //itemForTable = items[pressedCellIndex]
+        
+        
+        var personArray:[TopCollectionViewItem] = [model.item]
+        var petArray = model.item.pet
+        charArray = personArray as [TopCollectionViewItem] + petArray! as [TopCollectionViewItem]
+        
+        print(personArray[0].name)
+        print(personArray.count)
+        print(petArray![0])
+        print(petArray![1])
+        print(petArray?.count)
+        print(charArray[0].name)
+        print(charArray[1].name)
+        print(charArray[2].name)
+        print(charArray.count)
+           
+        
     }
     
     @objc func goBackToMainFromSettings() {
@@ -170,12 +189,14 @@ extension SettingsViewController: UITableViewDataSource {
 // MARK: - UICollectionViewDataSource
 extension SettingsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        itemsChar.count
+        //itemsChar.count
+        charArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SettingsCollectionViewCell.self), for: indexPath) as! SettingsCollectionViewCell
-        cell.configure(with: itemsChar[indexPath.item])
+        cell.configure(with: charArray[indexPath.item])
+        //cell.configure(with: itemsChar[indexPath.item])
         return cell
     }
 }
@@ -183,19 +204,19 @@ extension SettingsViewController: UICollectionViewDataSource {
 extension SettingsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
-        print(itemsChar[indexPath.row].name)
-        print(itemsChar[indexPath.item].isAddButtonVisible)
+        print(charArray[indexPath.row].name)
+        print(charArray[indexPath.item].isAddButtonVisible)
         
-        if itemsChar[indexPath.item].isAddButtonVisible {
+        if charArray[indexPath.item].isAddButtonVisible ?? false {
             print("isAddButtonVisible = true")
         }
         pressedCellIndex = indexPath.row
         
         
-        itemsChar.indices.forEach { index in
-            itemsChar[index].isSelectedCell = false
+        charArray.indices.forEach { index in
+            charArray[index].isSelectedCell = false
         }
-        itemsChar[indexPath.item].isSelectedCell = true
+        charArray[indexPath.item].isSelectedCell = true
         collectionView.reloadData()
         tableView.reloadData()
         

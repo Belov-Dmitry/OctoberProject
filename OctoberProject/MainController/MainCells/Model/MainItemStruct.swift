@@ -41,20 +41,33 @@ enum PetMediaCollectionItemsType {
     case petLoadMediaCell
 }
 
-struct CharacterStruct {
-    let personName: String?
-    let personPhoto: UIImage?
-    let personData: String?
-    let personPhone: String?
-    let isPersonMan: Bool?
-    let personMail: String?
-    let currentPass: String?
-    let newPass: String?
-    let location: String?
-    let petName: String?
-    let petPhoto: UIImage?
-    let petBirthday: String?
-    let petData: String?
-    let isPetMan: Bool?
-    let petBreed: String?
+protocol TopCollectionViewItem {
+    var name: String { get set }
+    var avatar: String { get set }
+    var isAddButtonVisible: Bool? { get set }
+    var isSelectedCell: Bool? { get set }
+}
+struct PersonStruct: TopCollectionViewItem {
+    var name: String
+    var avatar: String
+    var personData: String?
+    var personPhone: String?
+    var isPersonMan: Bool?
+    var personMail: String?
+    var currentPass: String?
+    var newPass: String?
+    var location: String?
+    var isAddButtonVisible: Bool?
+    var isSelectedCell: Bool?
+    var pet: [PetStruct]?
+}
+struct PetStruct: TopCollectionViewItem {
+    var name: String
+    var avatar: String
+    var petBirthday: String?
+    var petData: String?
+    var isPetMan: Bool?
+    var petBreed: String?
+    var isAddButtonVisible: Bool?
+    var isSelectedCell: Bool?
 }
