@@ -18,23 +18,23 @@ class SettingsViewController: UIViewController {
     private var collectionView: UICollectionView!
     private let tableView = UITableView()
     var pressedCellIndex = 0
-    var itemsChar: [SettingsTopCellStruct] = [
-        SettingsTopCellStruct(
-            foto: UIImage(named: "person")!,
-            name: "Никита",
-            isAddButtonVisible: false,
-            isSelectedCell: true),
-        SettingsTopCellStruct(
-            foto: UIImage(named: "pet")!,
-            name: "Арчи",
-            isAddButtonVisible: false,
-            isSelectedCell: false),
-        SettingsTopCellStruct(
-            foto: UIImage(named: "AddPetAvatar")!,
-            name: "Добавить",
-            isAddButtonVisible: true,
-            isSelectedCell: false)
-    ]
+//    var itemsChar: [SettingsTopCellStruct] = [
+//        SettingsTopCellStruct(
+//            foto: UIImage(named: "person")!,
+//            name: "Никита",
+//            isAddButtonVisible: false,
+//            isSelectedCell: true),
+//        SettingsTopCellStruct(
+//            foto: UIImage(named: "pet")!,
+//            name: "Арчи",
+//            isAddButtonVisible: false,
+//            isSelectedCell: false),
+//        SettingsTopCellStruct(
+//            foto: UIImage(named: "AddPetAvatar")!,
+//            name: "Добавить",
+//            isAddButtonVisible: true,
+//            isSelectedCell: false)
+//    ]
     
     var items: [SettingsModel] = [
         .settingsPersonCell(SettingsPersonCellStruct(
@@ -62,23 +62,24 @@ class SettingsViewController: UIViewController {
     
     var model = MainModel()
     var charArray:[TopCollectionViewItem] = []
-    
+    var personArray:[TopCollectionViewItem] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         view.backgroundColor = UIConstants.backColor
-        //itemForTable = items[pressedCellIndex]
         
-        
-        var personArray:[TopCollectionViewItem] = [model.item]
-        var petArray = model.item.pet
-        charArray = personArray as [TopCollectionViewItem] + petArray! as [TopCollectionViewItem]
+        personArray = [model.item]
+        guard var petArray = model.item.pet as? [TopCollectionViewItem] else {
+            return
+        }
+        charArray = personArray + petArray
         
         print(personArray[0].name)
         print(personArray.count)
-        print(petArray![0])
-        print(petArray![1])
-        print(petArray?.count)
+        print(petArray[0])
+        print(petArray[1])
+        print(petArray.count)
         print(charArray[0].name)
         print(charArray[1].name)
         print(charArray[2].name)
@@ -135,40 +136,9 @@ extension SettingsViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        switch section {
-//        case 0: return " "
-//        case 1: return " "
-//        default: return nil
-//        }
-//    }
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        0
-//    }
 }
 //MARK: UITableViewDataSource
 extension SettingsViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        1
-//    }
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let item = items[indexPath.section]
-//        switch item {
-//        case .settingsPersonCell(let info):
-//            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SettingsPersonCell.self), for: indexPath) as! SettingsPersonCell
-//            //_ = indexPath.section
-//            cell.configure(with: info)
-//            //cell.delegate = self
-//            return cell
-//        case .settingsPetCell(let info):
-//            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SettingsPetCell.self), for: indexPath) as! SettingsPetCell
-//            //_ = indexPath.section
-//            cell.configure(with: info)
-//            //cell.delegate = self
-//            return cell
-//        }
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
@@ -196,7 +166,6 @@ extension SettingsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SettingsCollectionViewCell.self), for: indexPath) as! SettingsCollectionViewCell
         cell.configure(with: charArray[indexPath.item])
-        //cell.configure(with: itemsChar[indexPath.item])
         return cell
     }
 }
