@@ -18,6 +18,9 @@ class SettingsViewController: UIViewController {
     private var collectionView: UICollectionView!
     private let tableView = UITableView()
     var pressedCellIndex = 0
+    
+    weak var settingsCoordinator: SettingsCoordinator?
+    
 //    var itemsChar: [SettingsTopCellStruct] = [
 //        SettingsTopCellStruct(
 //            foto: UIImage(named: "person")!,

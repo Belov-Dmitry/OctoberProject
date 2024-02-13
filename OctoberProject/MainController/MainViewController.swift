@@ -14,12 +14,17 @@ class MainViewController: UIViewController, UITabBarControllerDelegate {
     }
     private let tableView = UITableView()
     let mainModel = MainModel()
+    var mainViewControllerCoordinator: MainViewControllerCoordinator?
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.delegate = self
         initialize()
+        guard let navigationController = self.navigationController else {
+            return
+        }
+        mainViewControllerCoordinator = MainViewControllerCoordinator(navigationController: navigationController)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -98,12 +103,16 @@ extension MainViewController: UITableViewDataSource {
 }
 extension MainViewController: MainHeaderCellDelegate {
     func settingsDidTap(){
-        let vc = SettingsViewController()
-        let navigationController = UINavigationController(rootViewController: vc)
-        navigationController.modalPresentationStyle = .pageSheet
-        present(navigationController, animated: true)
-        print("tapSettings")
+        mainViewControllerCoordinator?.showSettings()
+        print("settingsCoordinator")
     }
+//    func settingsDidTap(){
+//        let vc = SettingsViewController()
+//        let navigationController = UINavigationController(rootViewController: vc)
+//        navigationController.modalPresentationStyle = .pageSheet
+//        present(navigationController, animated: true)
+//        print("tapSettings")
+//    }
 }
 extension MainViewController: MainPersonInfoCellDelegate {
     func personInfoViewLabelTap() {

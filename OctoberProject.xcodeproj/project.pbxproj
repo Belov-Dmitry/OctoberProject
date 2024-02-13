@@ -13,11 +13,22 @@
 		DCCBF1022AD34D0D0051D97B /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBF1012AD34D0D0051D97B /* Resources.swift */; };
 		DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBF1032AD34D2C0051D97B /* Tab.swift */; };
 		F46BB0112B23B237004F6376 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46BB0102B23B237004F6376 /* MainModel.swift */; };
+		F47A7C512B7BB37D00A378A0 /* Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A7C502B7BB37D00A378A0 /* Coordinators.swift */; };
+		F47A7C532B7BB39E00A378A0 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A7C522B7BB39E00A378A0 /* AppCoordinator.swift */; };
+		F47A7C562B7BB42900A378A0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A7C552B7BB42900A378A0 /* LoginView.swift */; };
+		F47A7C582B7BB44600A378A0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A7C572B7BB44600A378A0 /* LoginViewController.swift */; };
+		F47A7C5A2B7BB45C00A378A0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A7C592B7BB45C00A378A0 /* LoginViewModel.swift */; };
+		F47A7C5C2B7BB47700A378A0 /* ILoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A7C5B2B7BB47700A378A0 /* ILoginViewModel.swift */; };
+		F47A7C5E2B7BB48C00A378A0 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A7C5D2B7BB48C00A378A0 /* LoginCoordinator.swift */; };
+		F47A7C602B7BB4CB00A378A0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A7C5F2B7BB4CB00A378A0 /* Colors.swift */; };
+		F47A7C622B7BB4F700A378A0 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A7C612B7BB4F700A378A0 /* Fonts.swift */; };
+		F47A7C642B7BB89400A378A0 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A7C632B7BB89400A378A0 /* SettingsCoordinator.swift */; };
 		F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D42ACF04F20096A6DA /* AppDelegate.swift */; };
 		F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D62ACF04F20096A6DA /* SceneDelegate.swift */; };
 		F4ABA4D92ACF04F20096A6DA /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA4D82ACF04F20096A6DA /* MessageViewController.swift */; };
 		F4ABA4DE2ACF04F30096A6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4ABA4DD2ACF04F30096A6DA /* Assets.xcassets */; };
 		F4ABA4E12ACF04F30096A6DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4ABA4DF2ACF04F30096A6DA /* LaunchScreen.storyboard */; };
+		F4C9D3F72B7C00CF009A7F36 /* MainViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C9D3F62B7C00CF009A7F36 /* MainViewControllerCoordinator.swift */; };
 		F4E5AE072AD470A900699CF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5AE062AD470A900699CF7 /* MainViewController.swift */; };
 		F4E8EE9B2AF2E05700637911 /* MainItemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EE9A2AF2E05700637911 /* MainItemStruct.swift */; };
 		F4E8EE9D2AF2E15F00637911 /* MainHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EE9C2AF2E15F00637911 /* MainHeaderCell.swift */; };
@@ -44,6 +55,16 @@
 		DCCBF1012AD34D0D0051D97B /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		DCCBF1032AD34D2C0051D97B /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		F46BB0102B23B237004F6376 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		F47A7C502B7BB37D00A378A0 /* Coordinators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Coordinators.swift; path = OctoberProject/MainController/Settings/Coordinators.swift; sourceTree = SOURCE_ROOT; };
+		F47A7C522B7BB39E00A378A0 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F47A7C552B7BB42900A378A0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F47A7C572B7BB44600A378A0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F47A7C592B7BB45C00A378A0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F47A7C5B2B7BB47700A378A0 /* ILoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoginViewModel.swift; sourceTree = "<group>"; };
+		F47A7C5D2B7BB48C00A378A0 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		F47A7C5F2B7BB4CB00A378A0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		F47A7C612B7BB4F700A378A0 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		F47A7C632B7BB89400A378A0 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		F4ABA4D12ACF04F20096A6DA /* OctoberProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OctoberProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4ABA4D42ACF04F20096A6DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4ABA4D62ACF04F20096A6DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +72,7 @@
 		F4ABA4DD2ACF04F30096A6DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4ABA4E02ACF04F30096A6DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4ABA4E22ACF04F30096A6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4C9D3F62B7C00CF009A7F36 /* MainViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		F4E5AE062AD470A900699CF7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F4E8EE9A2AF2E05700637911 /* MainItemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemStruct.swift; sourceTree = "<group>"; };
 		F4E8EE9C2AF2E15F00637911 /* MainHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderCell.swift; sourceTree = "<group>"; };
@@ -138,6 +160,27 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		F47A7C4F2B7BB36C00A378A0 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F47A7C502B7BB37D00A378A0 /* Coordinators.swift */,
+				F47A7C522B7BB39E00A378A0 /* AppCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F47A7C542B7BB40700A378A0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F47A7C552B7BB42900A378A0 /* LoginView.swift */,
+				F47A7C572B7BB44600A378A0 /* LoginViewController.swift */,
+				F47A7C592B7BB45C00A378A0 /* LoginViewModel.swift */,
+				F47A7C5B2B7BB47700A378A0 /* ILoginViewModel.swift */,
+				F47A7C5D2B7BB48C00A378A0 /* LoginCoordinator.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		F4ABA4C82ACF04F20096A6DA = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +200,8 @@
 		F4ABA4D32ACF04F20096A6DA /* OctoberProject */ = {
 			isa = PBXGroup;
 			children = (
+				F47A7C4F2B7BB36C00A378A0 /* Navigation */,
+				F47A7C542B7BB40700A378A0 /* Login */,
 				F4E5AE052AD4705E00699CF7 /* MainController */,
 				DCCBF1002AD34CE00051D97B /* Helpers */,
 				DCAF69782AD011AA003FFECB /* TabBarController */,
@@ -181,9 +226,11 @@
 		F4ABA4EB2ACF19940096A6DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F47A7C5F2B7BB4CB00A378A0 /* Colors.swift */,
 				F4ABA4DD2ACF04F30096A6DA /* Assets.xcassets */,
 				F4ABA4DF2ACF04F30096A6DA /* LaunchScreen.storyboard */,
 				F4ABA4E22ACF04F30096A6DA /* Info.plist */,
+				F47A7C612B7BB4F700A378A0 /* Fonts.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -194,6 +241,7 @@
 				F4E8EEBD2B0A2D0500637911 /* Settings */,
 				F45D57022ADDCA720013BE44 /* MainCells */,
 				F4E5AE062AD470A900699CF7 /* MainViewController.swift */,
+				F4C9D3F62B7C00CF009A7F36 /* MainViewControllerCoordinator.swift */,
 			);
 			path = MainController;
 			sourceTree = "<group>";
@@ -204,6 +252,7 @@
 				F4E8EEC72B0A682E00637911 /* Struct */,
 				F4E8EEC02B0A65DE00637911 /* Cellls */,
 				F4E8EEBE2B0A2D3800637911 /* SettingsViewController.swift */,
+				F47A7C632B7BB89400A378A0 /* SettingsCoordinator.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -312,8 +361,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47A7C5C2B7BB47700A378A0 /* ILoginViewModel.swift in Sources */,
+				F47A7C582B7BB44600A378A0 /* LoginViewController.swift in Sources */,
 				DCAF697E2AD012D8003FFECB /* ProfileViewController.swift in Sources */,
 				F4E8EEA12AF2E20F00637911 /* MainPetInfoCell.swift in Sources */,
+				F47A7C532B7BB39E00A378A0 /* AppCoordinator.swift in Sources */,
+				F4C9D3F72B7C00CF009A7F36 /* MainViewControllerCoordinator.swift in Sources */,
 				F4ABA4D92ACF04F20096A6DA /* MessageViewController.swift in Sources */,
 				DCCBF1022AD34D0D0051D97B /* Resources.swift in Sources */,
 				F4E8EEBC2B03E8CD00637911 /* PetDataEditViewController.swift in Sources */,
@@ -324,14 +377,21 @@
 				DCCBF1042AD34D2C0051D97B /* Tab.swift in Sources */,
 				F4E8EEC62B0A667C00637911 /* SettingsPetCell.swift in Sources */,
 				F4E8EE9B2AF2E05700637911 /* MainItemStruct.swift in Sources */,
+				F47A7C5E2B7BB48C00A378A0 /* LoginCoordinator.swift in Sources */,
 				DCAF697A2AD011F1003FFECB /* TabBarController.swift in Sources */,
 				F4E8EE9D2AF2E15F00637911 /* MainHeaderCell.swift in Sources */,
 				F4ABA4D52ACF04F20096A6DA /* AppDelegate.swift in Sources */,
+				F47A7C622B7BB4F700A378A0 /* Fonts.swift in Sources */,
 				F4E5AE072AD470A900699CF7 /* MainViewController.swift in Sources */,
 				DCAF697C2AD012C7003FFECB /* MapViewController.swift in Sources */,
+				F47A7C512B7BB37D00A378A0 /* Coordinators.swift in Sources */,
 				F4ABA4D72ACF04F20096A6DA /* SceneDelegate.swift in Sources */,
+				F47A7C5A2B7BB45C00A378A0 /* LoginViewModel.swift in Sources */,
 				F4E8EEC42B0A666800637911 /* SettingsPersonCell.swift in Sources */,
+				F47A7C602B7BB4CB00A378A0 /* Colors.swift in Sources */,
+				F47A7C562B7BB42900A378A0 /* LoginView.swift in Sources */,
 				F4E8EEA32AF2E32100637911 /* PetMediaCollectionViewCell.swift in Sources */,
+				F47A7C642B7BB89400A378A0 /* SettingsCoordinator.swift in Sources */,
 				F4E8EE9F2AF2E1DF00637911 /* MainPersonInfoCell.swift in Sources */,
 				F4E8EEB02B0011ED00637911 /* PersonDataEditViewController.swift in Sources */,
 				F4E8EECC2B0A814B00637911 /* SettingsCollectionViewCell.swift in Sources */,
